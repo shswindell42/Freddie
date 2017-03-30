@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dim].[Calendar]
+(
+	CalendarKey INT NOT NULL PRIMARY KEY
+	,MonthNumber TINYINT NOT NULL 
+	,MonthName VARCHAR(15) NOT NULL
+	,Quarter VARCHAR(10) NOT NULL
+	,Year VARCHAR(4) NOT NULL
+)

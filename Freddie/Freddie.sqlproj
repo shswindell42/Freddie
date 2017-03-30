@@ -57,5 +57,53 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="stage" />
+    <Folder Include="Security" />
+    <Folder Include="stage\Tables\" />
+    <Folder Include="stage\Views" />
+    <Folder Include="dim" />
+    <Folder Include="etl" />
+    <Folder Include="etl\Stored Procedures" />
+    <Folder Include="fact" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\stage.sql" />
+    <Build Include="stage\Tables\MSACodes.sql" />
+    <Build Include="stage\Tables\MSADivision.sql" />
+    <Build Include="stage\Tables\LoanOrigination.sql" />
+    <Build Include="stage\Tables\LoanService.sql" />
+    <Build Include="Security\dim.sql" />
+    <Build Include="Security\fact.sql" />
+    <Build Include="stage\Views\vLoanService.sql" />
+    <Build Include="dim\Credit.sql" />
+    <Build Include="stage\Views\vCredit.sql" />
+    <Build Include="stage\Views\vMSACodes.sql" />
+    <Build Include="dim\MetropolitanArea.sql" />
+    <Build Include="dim\Calendar.sql" />
+    <Build Include="stage\Views\vLoanAttributes.sql" />
+    <Build Include="Security\etl.sql" />
+    <Build Include="etl\Stored Procedures\CalendarLoad.sql" />
+    <Build Include="etl\Stored Procedures\MetropolitanAreaLoad.sql" />
+    <Build Include="dim\LoanAttributes.sql" />
+    <Build Include="stage\Views\vProperty.sql" />
+    <Build Include="etl\Stored Procedures\LoanAttributesLoad.sql" />
+    <Build Include="stage\Tables\ZipCode.sql" />
+    <Build Include="dim\Geography.sql" />
+    <Build Include="etl\Stored Procedures\GeographyLoad.sql" />
+    <Build Include="dim\Property.sql" />
+    <Build Include="etl\Stored Procedures\PropertyLoad.sql" />
+    <Build Include="stage\Views\vExternalEntity.sql" />
+    <Build Include="dim\ExternalEntity.sql" />
+    <Build Include="etl\Stored Procedures\ExternalEntityLoad.sql" />
+    <Build Include="etl\Stored Procedures\LoanOriginationLoad.sql" />
+    <Build Include="fact\LoanOrigination.sql" />
+    <Build Include="dim\File.sql" />
+    <Build Include="etl\Stored Procedures\FileLoad.sql" />
+    <Build Include="etl\Stored Procedures\CreditLoad.sql" />
+    <Build Include="stage\Tables\MSACodeListing.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\AddGenericPostalCodes.sql" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,3244 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2017 3:08:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WINDOWS-VIJNPTI"
+  DTS:CreatorName="WINDOWS-VIJNPTI\spencer.swindell"
+  DTS:DTSID="{B4E7028B-1F0F-43F5-A6EB-19B044A4A08E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="FreddicMacLoanLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{398A94C2-59EA-4E6C-9B6A-43F09987A575}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Freddie]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+      DTS:ObjectName="Freddie">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Freddie;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LoanOrigination]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{443FD9CB-AB69-47B7-BD82-028761F325DC}"
+      DTS:ObjectName="LoanOrigination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\dev\Presentations\ApplyingDataWarehouseTechniques\sample_orig_2016.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CreditScore"
+              DTS:DTSID="{81B32A41-EBF7-4231-B1E0-D5C8BE419D24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstPaymentMonth"
+              DTS:DTSID="{79ACABFF-C3B5-4E34-BC18-2805DCB14408}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstTimeHomeBuyerFlag"
+              DTS:DTSID="{8AFE9C6D-35A3-4E6E-93DD-E5894760E22B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MaturityMonth"
+              DTS:DTSID="{653CCC12-CA7D-4377-978C-086103BC8D21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MSACode"
+              DTS:DTSID="{D0205150-024B-47DE-A52C-893CC733F23E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MortgageInsurancePercentage"
+              DTS:DTSID="{CD73F3C3-D52A-4CDA-947F-24E7AF52326A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units"
+              DTS:DTSID="{26638B5C-2378-4E99-8CD6-48AD584B87ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OccupancyStatus"
+              DTS:DTSID="{C2E457D4-861C-4796-BD46-100B7F2C294C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OriginalCLTV"
+              DTS:DTSID="{0EB4FCBC-1FEE-4338-BECC-979EF23E640E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OriginalDTIRatio"
+              DTS:DTSID="{A6CE6A15-84E7-47F7-963A-D9D2990F385C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OriginalUPB"
+              DTS:DTSID="{28DC0C42-0825-4D2F-82E2-982B7FA5F4CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OriginalLTV"
+              DTS:DTSID="{E8662CFD-3F8C-4A8F-8C4E-D4B3C96AA874}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InterestRate"
+              DTS:DTSID="{38C1ADEF-86EE-4FB0-96F2-2699E224B7CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Channel"
+              DTS:DTSID="{424BDD54-FB3A-4D76-9110-D88AB49BD982}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PPMFlag"
+              DTS:DTSID="{EBF050C8-4956-4A35-A094-71D8CFC77DE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductType"
+              DTS:DTSID="{CE1C39E3-62F0-42EF-9660-A8A62341F4B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PropertyState"
+              DTS:DTSID="{F7C4B9D5-53EF-4BBB-A641-CB3524F853A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PropertyType"
+              DTS:DTSID="{B6808E95-CA27-4362-829F-43961FACBC1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PostalCode"
+              DTS:DTSID="{EC576959-E02D-4B0F-9807-19F7ACA4611E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoanSequenceNumber"
+              DTS:DTSID="{20DDCCB1-2395-4D98-B912-E4CC7B36A53B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoanPurpose"
+              DTS:DTSID="{6C85A5AC-FFD6-4C66-BBAC-8AB15BA56F01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OriginalLoanTerm"
+              DTS:DTSID="{725031FD-07A4-4C23-88EC-4AF4401253FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NumberOfBorrowers"
+              DTS:DTSID="{F3455BC6-AAC8-42BA-86C8-F37DFDC93906}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SellerName"
+              DTS:DTSID="{E95DF022-4902-45CB-92DA-D1C28F7323B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ServicerName"
+              DTS:DTSID="{C893B848-D305-4972-A546-317C062E5935}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SuperConformingFlag"
+              DTS:DTSID="{516ABE7D-C518-4A2C-A7C9-8A4658459C50}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LoanServiceFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DBAD13CC-7346-4B15-8DA5-6A988BCA6DD4}"
+      DTS:ObjectName="LoanServiceFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\dev\Presentations\ApplyingDataWarehouseTechniques\sample_svcg_2016.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoanSequenceNumber"
+              DTS:DTSID="{14310B91-87F3-4A38-9E38-C790B1EFE5F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ReportingMonth"
+              DTS:DTSID="{31427368-0003-4814-A8A3-73BB1903D0DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ActualUPB"
+              DTS:DTSID="{C363A03D-E212-4D28-AEF8-6221C66220A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DelinquencyStatus"
+              DTS:DTSID="{60692B45-FDDF-456D-802D-0272A647DD02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoanAge"
+              DTS:DTSID="{3857E2EE-3D07-4C30-B20A-9B7976DA408A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MonthsToMaturity"
+              DTS:DTSID="{72B82D25-A314-4473-B5E3-78D65BF83A7C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RepurchaseFlag"
+              DTS:DTSID="{E019DB4A-1D49-4E18-ACB0-F8BA973577C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ModificationFlag"
+              DTS:DTSID="{F646F715-54FB-43A0-B512-6BB0C4D950A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZeroBalanceCode"
+              DTS:DTSID="{A359A0B6-222B-49CB-8E59-5D5DC7AFB3BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZeroBalanceEffectiveMonth"
+              DTS:DTSID="{4F571276-15BD-48C8-A8D2-57EA06A15ECD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InterestRate"
+              DTS:DTSID="{A6D75DF3-34D9-4F7F-A784-7C413ACE1F0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DeferredUPB"
+              DTS:DTSID="{7FCE0D6E-5BAD-4F3B-9887-D04A74113E17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DDLPI"
+              DTS:DTSID="{ADE28076-A91B-41C4-89F1-EA995BCAA481}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MIRecoveries"
+              DTS:DTSID="{2C80EA41-9305-45D8-A786-491882F3519B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NetSalesProceeds"
+              DTS:DTSID="{56461B39-D38B-4F39-9A3D-018F2780DDE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NonMIRecoveries"
+              DTS:DTSID="{A50DFE39-0A94-4823-87A0-482C6CD7B678}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Expenses"
+              DTS:DTSID="{A9BDF9F2-57C9-49FD-B005-42A335E853B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LegalCosts"
+              DTS:DTSID="{B306BC20-5F4B-44D9-803E-14EB05D6141C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MaintenanceCosts"
+              DTS:DTSID="{CD83183A-6F6C-4C63-9A9B-6A3EFC7C3C9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TaxesInsurance"
+              DTS:DTSID="{4F8B3CDA-2E25-4BE7-A35E-5D7767CDAEF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MiscExpenses"
+              DTS:DTSID="{606311B9-777C-4A32-BD5C-DA83A45F7765}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ModificationCost"
+              DTS:DTSID="{92E3D6D1-DA67-47C7-8A83-54D98156E522}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{420EFAAB-F58F-44A3-B3A7-11BBA0A9DF53}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoanOriginationFile">
+      <DTS:VariableValue
+        DTS:DataType="8">sample_orig_2016.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5DBCAD09-3DA5-4B99-B49E-EC64C6D0E720}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoanServiceFile">
+      <DTS:VariableValue
+        DTS:DataType="8">sample_svcg_2016.txt</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Dim"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{AEB2A89D-82E7-47E1-98D9-6AFC82B3A014}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Dim">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Load dim Credit"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F012DA0D-E376-4107-97BE-AEDB43B6DA8B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load dim Credit"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.CreditLoad" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Load Dim ExternalEntity"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8A82B038-C07D-4C51-9F9C-146E763EA002}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Dim ExternalEntity"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.ExternalEntityLoad" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Load Dim File"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{DAC98BA3-5700-44C3-87D3-05A9748CB702}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Dim File"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.FileLoad" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Load Dim Geography"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{84C79FB3-105A-4203-8678-BFFBD9D39029}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Dim Geography"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.GeographyLoad" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Load Dim MetropolitanArea"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2555997D-EB09-4D44-A54F-C4C824044985}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Dim MetropolitanArea"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.MetropolitanAreaLoad" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Load dim Property"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F43925E4-EBDC-48AB-BB8B-A6815D39703F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load dim Property"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.PropertyLoad" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Loan Attributes Load"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{71D54C89-4A56-491E-80A9-C6CD70057D18}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Loan Attributes Load"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.LoanAttributesLoad&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Fact"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7B2E9847-1DB0-4A7A-9530-1BE1FB477F17}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Fact">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Fact\Load LoanOrigination"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FCAC950D-895E-424D-8E0C-FED89736DDE5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load LoanOrigination"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+              SQLTask:SqlStatementSource="EXEC etl.LoanOriginationLoad" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Stage Loan Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FA494806-D2DE-4668-BE6B-68397650FF71}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stage Loan Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Stage Loan Data\add FileName"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="add FileName"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage Loan Data\add FileName.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Stage Loan Data\add FileName.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Output].Columns[FileName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Output].Columns[FileName]"
+                      name="FileName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,100,1252)@[User::LoanOriginationFile]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,100,1252)@[User::LoanOriginationFile]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Stage Loan Data\add FileName.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage Loan Data\File LoanOrigination"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="File LoanOrigination"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Loan Data\File LoanOrigination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LoanOrigination]"
+                  connectionManagerRefId="Package.ConnectionManagers[LoanOrigination]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[CreditScore]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[CreditScore]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[CreditScore]"
+                      name="CreditScore"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[FirstPaymentMonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[FirstPaymentMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[FirstPaymentMonth]"
+                      name="FirstPaymentMonth"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[FirstTimeHomeBuyerFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[FirstTimeHomeBuyerFlag]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[FirstTimeHomeBuyerFlag]"
+                      name="FirstTimeHomeBuyerFlag"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MaturityMonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[MaturityMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MaturityMonth]"
+                      name="MaturityMonth"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MSACode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[MSACode]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MSACode]"
+                      name="MSACode"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MortgageInsurancePercentage]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[MortgageInsurancePercentage]"
+                      length="3"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MortgageInsurancePercentage]"
+                      name="MortgageInsurancePercentage"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[Units]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[Units]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[Units]"
+                      name="Units"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OccupancyStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OccupancyStatus]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OccupancyStatus]"
+                      name="OccupancyStatus"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalCLTV]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalCLTV]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalCLTV]"
+                      name="OriginalCLTV"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalDTIRatio]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalDTIRatio]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalDTIRatio]"
+                      name="OriginalDTIRatio"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalUPB]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalUPB]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalUPB]"
+                      name="OriginalUPB"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalLTV]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalLTV]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalLTV]"
+                      name="OriginalLTV"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[InterestRate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[InterestRate]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[InterestRate]"
+                      name="InterestRate"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[Channel]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[Channel]"
+                      name="Channel"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PPMFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PPMFlag]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PPMFlag]"
+                      name="PPMFlag"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[ProductType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[ProductType]"
+                      length="3"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[ProductType]"
+                      name="ProductType"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PropertyState]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PropertyState]"
+                      length="2"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PropertyState]"
+                      name="PropertyState"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PropertyType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PropertyType]"
+                      length="2"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PropertyType]"
+                      name="PropertyType"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PostalCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PostalCode]"
+                      length="5"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PostalCode]"
+                      name="PostalCode"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[LoanSequenceNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[LoanSequenceNumber]"
+                      length="12"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[LoanSequenceNumber]"
+                      name="LoanSequenceNumber"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[LoanPurpose]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[LoanPurpose]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[LoanPurpose]"
+                      name="LoanPurpose"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalLoanTerm]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalLoanTerm]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalLoanTerm]"
+                      name="OriginalLoanTerm"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[NumberOfBorrowers]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[NumberOfBorrowers]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[NumberOfBorrowers]"
+                      name="NumberOfBorrowers"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[SellerName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[SellerName]"
+                      length="20"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[SellerName]"
+                      name="SellerName"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[ServicerName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[ServicerName]"
+                      length="20"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[ServicerName]"
+                      name="ServicerName"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[SuperConformingFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[SuperConformingFlag]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[SuperConformingFlag]"
+                      name="SuperConformingFlag"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[CreditScore]"
+                      dataType="i2"
+                      name="CreditScore" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[FirstPaymentMonth]"
+                      dataType="i4"
+                      name="FirstPaymentMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[FirstTimeHomeBuyerFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FirstTimeHomeBuyerFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[MaturityMonth]"
+                      dataType="i4"
+                      name="MaturityMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[MSACode]"
+                      dataType="i4"
+                      name="MSACode" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[MortgageInsurancePercentage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="MortgageInsurancePercentage" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[Units]"
+                      dataType="i1"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OccupancyStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="OccupancyStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalCLTV]"
+                      dataType="i1"
+                      name="OriginalCLTV" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalDTIRatio]"
+                      dataType="i1"
+                      name="OriginalDTIRatio" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalUPB]"
+                      dataType="i4"
+                      name="OriginalUPB" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalLTV]"
+                      dataType="i1"
+                      name="OriginalLTV" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[InterestRate]"
+                      dataType="r4"
+                      name="InterestRate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Channel" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PPMFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="PPMFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[ProductType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="ProductType" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PropertyState]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PropertyState" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PropertyType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PropertyType" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[PostalCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[LoanSequenceNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="LoanSequenceNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[LoanPurpose]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LoanPurpose" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[OriginalLoanTerm]"
+                      dataType="i2"
+                      name="OriginalLoanTerm" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[NumberOfBorrowers]"
+                      dataType="i1"
+                      name="NumberOfBorrowers" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[SellerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SellerName" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[ServicerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ServicerName" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].ExternalColumns[SuperConformingFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SuperConformingFlag" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage Loan Data\File LoanService"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="File LoanService"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Loan Data\File LoanService.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LoanServiceFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[LoanServiceFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LoanSequenceNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[LoanSequenceNumber]"
+                      length="12"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LoanSequenceNumber]"
+                      name="LoanSequenceNumber"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ReportingMonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ReportingMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ReportingMonth]"
+                      name="ReportingMonth"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ActualUPB]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ActualUPB]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ActualUPB]"
+                      name="ActualUPB"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DelinquencyStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[DelinquencyStatus]"
+                      length="3"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DelinquencyStatus]"
+                      name="DelinquencyStatus"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LoanAge]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[LoanAge]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LoanAge]"
+                      name="LoanAge"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MonthsToMaturity]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MonthsToMaturity]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MonthsToMaturity]"
+                      name="MonthsToMaturity"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[RepurchaseFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[RepurchaseFlag]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[RepurchaseFlag]"
+                      name="RepurchaseFlag"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ModificationFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ModificationFlag]"
+                      length="1"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ModificationFlag]"
+                      name="ModificationFlag"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ZeroBalanceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ZeroBalanceCode]"
+                      length="2"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ZeroBalanceCode]"
+                      name="ZeroBalanceCode"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ZeroBalanceEffectiveMonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ZeroBalanceEffectiveMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ZeroBalanceEffectiveMonth]"
+                      name="ZeroBalanceEffectiveMonth"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[InterestRate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[InterestRate]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[InterestRate]"
+                      name="InterestRate"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DeferredUPB]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[DeferredUPB]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DeferredUPB]"
+                      name="DeferredUPB"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DDLPI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[DDLPI]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DDLPI]"
+                      name="DDLPI"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MIRecoveries]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MIRecoveries]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MIRecoveries]"
+                      name="MIRecoveries"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[NetSalesProceeds]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[NetSalesProceeds]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[NetSalesProceeds]"
+                      name="NetSalesProceeds"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[NonMIRecoveries]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[NonMIRecoveries]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[NonMIRecoveries]"
+                      name="NonMIRecoveries"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[Expenses]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[Expenses]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[Expenses]"
+                      name="Expenses"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LegalCosts]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[LegalCosts]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LegalCosts]"
+                      name="LegalCosts"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MaintenanceCosts]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MaintenanceCosts]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MaintenanceCosts]"
+                      name="MaintenanceCosts"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[TaxesInsurance]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[TaxesInsurance]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[TaxesInsurance]"
+                      name="TaxesInsurance"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MiscExpenses]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MiscExpenses]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MiscExpenses]"
+                      name="MiscExpenses"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ModificationCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ModificationCost]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ModificationCost]"
+                      name="ModificationCost"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[LoanSequenceNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="LoanSequenceNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ReportingMonth]"
+                      dataType="i4"
+                      name="ReportingMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ActualUPB]"
+                      dataType="r4"
+                      name="ActualUPB" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[DelinquencyStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DelinquencyStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[LoanAge]"
+                      dataType="i2"
+                      name="LoanAge" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MonthsToMaturity]"
+                      dataType="i2"
+                      name="MonthsToMaturity" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[RepurchaseFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="RepurchaseFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ModificationFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ModificationFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ZeroBalanceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ZeroBalanceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ZeroBalanceEffectiveMonth]"
+                      dataType="i4"
+                      name="ZeroBalanceEffectiveMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[InterestRate]"
+                      dataType="r4"
+                      name="InterestRate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[DeferredUPB]"
+                      dataType="cy"
+                      name="DeferredUPB" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[DDLPI]"
+                      dataType="i4"
+                      name="DDLPI" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MIRecoveries]"
+                      dataType="cy"
+                      name="MIRecoveries" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[NetSalesProceeds]"
+                      dataType="cy"
+                      name="NetSalesProceeds" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[NonMIRecoveries]"
+                      dataType="cy"
+                      name="NonMIRecoveries" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[Expenses]"
+                      dataType="cy"
+                      name="Expenses" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[LegalCosts]"
+                      dataType="cy"
+                      name="LegalCosts" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MaintenanceCosts]"
+                      dataType="cy"
+                      name="MaintenanceCosts" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[TaxesInsurance]"
+                      dataType="cy"
+                      name="TaxesInsurance" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[MiscExpenses]"
+                      dataType="cy"
+                      name="MiscExpenses" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[ModificationCost]"
+                      dataType="cy"
+                      name="ModificationCost" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage Loan Data\Stage LoanOrigination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage LoanOrigination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[LoanOrigination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Loan Data\Stage LoanOrigination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Freddie]"
+                  connectionManagerRefId="Package.ConnectionManagers[Freddie]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[CreditScore]"
+                      cachedDataType="i2"
+                      cachedName="CreditScore"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[CreditScore]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[CreditScore]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[FirstPaymentMonth]"
+                      cachedDataType="i4"
+                      cachedName="FirstPaymentMonth"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[FirstPaymentMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[FirstPaymentMonth]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[FirstTimeHomeBuyerFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FirstTimeHomeBuyerFlag"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[FirstTimeHomeBuyerFlag]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[FirstTimeHomeBuyerFlag]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[MaturityMonth]"
+                      cachedDataType="i4"
+                      cachedName="MaturityMonth"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[MaturityMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MaturityMonth]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[MSACode]"
+                      cachedDataType="i4"
+                      cachedName="MSACode"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[MSACode]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MSACode]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[MortgageInsurancePercentage]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="MortgageInsurancePercentage"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[MortgageInsurancePercentage]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[MortgageInsurancePercentage]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[Units]"
+                      cachedDataType="i1"
+                      cachedName="Units"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[Units]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[Units]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[OccupancyStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="OccupancyStatus"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OccupancyStatus]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OccupancyStatus]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[OriginalCLTV]"
+                      cachedDataType="i1"
+                      cachedName="OriginalCLTV"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalCLTV]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalCLTV]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[OriginalDTIRatio]"
+                      cachedDataType="i1"
+                      cachedName="OriginalDTIRatio"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalDTIRatio]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalDTIRatio]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[OriginalUPB]"
+                      cachedDataType="i4"
+                      cachedName="OriginalUPB"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalUPB]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalUPB]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[OriginalLTV]"
+                      cachedDataType="i1"
+                      cachedName="OriginalLTV"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalLTV]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalLTV]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[InterestRate]"
+                      cachedDataType="r4"
+                      cachedName="InterestRate"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[InterestRate]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[Channel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Channel"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[Channel]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[Channel]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[PPMFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="PPMFlag"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PPMFlag]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PPMFlag]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[ProductType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="ProductType"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[ProductType]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[ProductType]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[PropertyState]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="PropertyState"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyState]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PropertyState]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[PropertyType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="PropertyType"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyType]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PropertyType]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[PostalCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[PostalCode]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[LoanSequenceNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="LoanSequenceNumber"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[LoanSequenceNumber]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[LoanSequenceNumber]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[LoanPurpose]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="LoanPurpose"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[LoanPurpose]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[LoanPurpose]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[OriginalLoanTerm]"
+                      cachedDataType="i2"
+                      cachedName="OriginalLoanTerm"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalLoanTerm]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[OriginalLoanTerm]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[NumberOfBorrowers]"
+                      cachedDataType="i1"
+                      cachedName="NumberOfBorrowers"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfBorrowers]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[NumberOfBorrowers]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[SellerName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="SellerName"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[SellerName]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[SellerName]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[ServicerName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ServicerName"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[ServicerName]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[ServicerName]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[SuperConformingFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="SuperConformingFlag"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[SuperConformingFlag]"
+                      lineageId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output].Columns[SuperConformingFlag]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].Columns[FileName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="FileName"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                      lineageId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Output].Columns[FileName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[CreditScore]"
+                      dataType="i2"
+                      name="CreditScore" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[FirstPaymentMonth]"
+                      dataType="i4"
+                      name="FirstPaymentMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[FirstTimeHomeBuyerFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FirstTimeHomeBuyerFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[MaturityMonth]"
+                      dataType="i4"
+                      name="MaturityMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[MSACode]"
+                      dataType="i4"
+                      name="MSACode" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[MortgageInsurancePercentage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="MortgageInsurancePercentage" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[Units]"
+                      dataType="i2"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OccupancyStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="OccupancyStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalCLTV]"
+                      dataType="i2"
+                      name="OriginalCLTV" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalDTIRatio]"
+                      dataType="i2"
+                      name="OriginalDTIRatio" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalUPB]"
+                      dataType="i4"
+                      name="OriginalUPB" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalLTV]"
+                      dataType="i2"
+                      name="OriginalLTV" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
+                      dataType="r4"
+                      name="InterestRate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Channel" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PPMFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="PPMFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[ProductType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="ProductType" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyState]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PropertyState" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PropertyType" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[LoanSequenceNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="LoanSequenceNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[LoanPurpose]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LoanPurpose" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[OriginalLoanTerm]"
+                      dataType="i2"
+                      name="OriginalLoanTerm" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfBorrowers]"
+                      dataType="i2"
+                      name="NumberOfBorrowers" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[SellerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SellerName" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[ServicerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ServicerName" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[SuperConformingFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SuperConformingFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FileName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage Loan Data\Stage LoanOrigination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\Stage LoanOrigination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Loan Data\Stage LoanOrigination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\Stage LoanOrigination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage Loan Data\Stage LoanService"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage LoanService"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[LoanService]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Loan Data\Stage LoanService.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Freddie]"
+                  connectionManagerRefId="Package.ConnectionManagers[Freddie]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[LoanSequenceNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="LoanSequenceNumber"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[LoanSequenceNumber]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LoanSequenceNumber]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[ReportingMonth]"
+                      cachedDataType="i4"
+                      cachedName="ReportingMonth"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ReportingMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ReportingMonth]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[ActualUPB]"
+                      cachedDataType="r4"
+                      cachedName="ActualUPB"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ActualUPB]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ActualUPB]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[DelinquencyStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="DelinquencyStatus"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[DelinquencyStatus]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DelinquencyStatus]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[LoanAge]"
+                      cachedDataType="i2"
+                      cachedName="LoanAge"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[LoanAge]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LoanAge]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[MonthsToMaturity]"
+                      cachedDataType="i2"
+                      cachedName="MonthsToMaturity"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MonthsToMaturity]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MonthsToMaturity]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[RepurchaseFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="RepurchaseFlag"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[RepurchaseFlag]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[RepurchaseFlag]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[ModificationFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ModificationFlag"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ModificationFlag]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ModificationFlag]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[ZeroBalanceCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ZeroBalanceCode"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ZeroBalanceCode]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ZeroBalanceCode]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[ZeroBalanceEffectiveMonth]"
+                      cachedDataType="i4"
+                      cachedName="ZeroBalanceEffectiveMonth"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ZeroBalanceEffectiveMonth]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ZeroBalanceEffectiveMonth]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[InterestRate]"
+                      cachedDataType="r4"
+                      cachedName="InterestRate"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[InterestRate]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[DeferredUPB]"
+                      cachedDataType="cy"
+                      cachedName="DeferredUPB"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[DeferredUPB]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DeferredUPB]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[DDLPI]"
+                      cachedDataType="i4"
+                      cachedName="DDLPI"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[DDLPI]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[DDLPI]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[MIRecoveries]"
+                      cachedDataType="cy"
+                      cachedName="MIRecoveries"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MIRecoveries]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MIRecoveries]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[NetSalesProceeds]"
+                      cachedDataType="cy"
+                      cachedName="NetSalesProceeds"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[NetSalesProceeds]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[NetSalesProceeds]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[NonMIRecoveries]"
+                      cachedDataType="cy"
+                      cachedName="NonMIRecoveries"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[NonMIRecoveries]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[NonMIRecoveries]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[Expenses]"
+                      cachedDataType="cy"
+                      cachedName="Expenses"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[Expenses]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[Expenses]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[LegalCosts]"
+                      cachedDataType="cy"
+                      cachedName="LegalCosts"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[LegalCosts]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[LegalCosts]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[MaintenanceCosts]"
+                      cachedDataType="cy"
+                      cachedName="MaintenanceCosts"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MaintenanceCosts]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MaintenanceCosts]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[TaxesInsurance]"
+                      cachedDataType="cy"
+                      cachedName="TaxesInsurance"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[TaxesInsurance]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[TaxesInsurance]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[MiscExpenses]"
+                      cachedDataType="cy"
+                      cachedName="MiscExpenses"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MiscExpenses]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[MiscExpenses]" />
+                    <inputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[ModificationCost]"
+                      cachedDataType="cy"
+                      cachedName="ModificationCost"
+                      externalMetadataColumnId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ModificationCost]"
+                      lineageId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ModificationCost]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[LoanSequenceNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="LoanSequenceNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ReportingMonth]"
+                      dataType="i4"
+                      name="ReportingMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ActualUPB]"
+                      dataType="r4"
+                      name="ActualUPB" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[DelinquencyStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="DelinquencyStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[LoanAge]"
+                      dataType="i2"
+                      name="LoanAge" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MonthsToMaturity]"
+                      dataType="i2"
+                      name="MonthsToMaturity" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[RepurchaseFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="RepurchaseFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ModificationFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ModificationFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ZeroBalanceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ZeroBalanceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ZeroBalanceEffectiveMonth]"
+                      dataType="i4"
+                      name="ZeroBalanceEffectiveMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
+                      dataType="r4"
+                      name="InterestRate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[DeferredUPB]"
+                      dataType="cy"
+                      name="DeferredUPB" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[DDLPI]"
+                      dataType="i4"
+                      name="DDLPI" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MIRecoveries]"
+                      dataType="cy"
+                      name="MIRecoveries" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[NetSalesProceeds]"
+                      dataType="cy"
+                      name="NetSalesProceeds" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[NonMIRecoveries]"
+                      dataType="cy"
+                      name="NonMIRecoveries" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[Expenses]"
+                      dataType="cy"
+                      name="Expenses" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[LegalCosts]"
+                      dataType="cy"
+                      name="LegalCosts" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MaintenanceCosts]"
+                      dataType="cy"
+                      name="MaintenanceCosts" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[TaxesInsurance]"
+                      dataType="cy"
+                      name="TaxesInsurance" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[MiscExpenses]"
+                      dataType="cy"
+                      name="MiscExpenses" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[ModificationCost]"
+                      dataType="cy"
+                      name="ModificationCost" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage Loan Data\Stage LoanService.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\Stage LoanService.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Loan Data\Stage LoanService.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Loan Data\Stage LoanService.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Stage Loan Data.Paths[Derived Column Output]"
+              endId="Package\Stage Loan Data\Stage LoanOrigination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Stage Loan Data\add FileName.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Stage Loan Data.Paths[Flat File Source Output1]"
+              endId="Package\Stage Loan Data\add FileName.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Stage Loan Data\File LoanOrigination.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Stage Loan Data.Paths[Flat File Source Output]"
+              endId="Package\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Stage Loan Data\File LoanService.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Stage Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{83F3D9D2-ADBD-484F-9FE4-137B4FA325E1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Stage Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3EF2489D-4ABA-414B-8B56-4B8E22A338F3}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stage.LoanOrigination&#xA;TRUNCATE TABLE stage.LoanService" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C3BECA9D-8E99-4952-84C5-F8F3719D96B2}"
+      DTS:From="Package\Truncate Stage Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Stage Loan Data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{45749655-443E-4C79-B286-8CFEB02A90C3}"
+      DTS:From="Package\Stage Loan Data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load Dim" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{CEFCFCE3-880A-4815-9529-7469E2F9F78A}"
+      DTS:From="Package\Load Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Fact" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Stage Loan Data"
+          TopLeft="138,216" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Truncate Stage Tables"
+          TopLeft="128,120" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="218.25,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Load Dim\Load dim Credit"
+          TopLeft="74,5.5" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Load Dim\Load Dim ExternalEntity"
+          TopLeft="87,94" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Load Dim\Load Dim File"
+          TopLeft="42,153" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load Dim\Load Dim Geography"
+          TopLeft="45,223" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Load Dim\Loan Attributes Load"
+          TopLeft="76,293" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Load Dim\Load Dim MetropolitanArea"
+          TopLeft="23,348" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load Dim\Load dim Property"
+          TopLeft="39,413" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="283,509"
+          Size="283,552"
+          Id="Package\Load Dim"
+          TopLeft="539,103" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="295,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="244,142"
+              Start="0,0"
+              End="236.5,142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="118,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="118,0"
+                    Point2="122,0"
+                    Point3="122,4" />
+                  <mssgle:LineSegment
+                    End="122,138" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122,138"
+                    Point2="122,142"
+                    Point3="126,142" />
+                  <mssgle:LineSegment
+                    End="236.5,142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load Fact\Load LoanOrigination"
+          TopLeft="39,31" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="264,128"
+          Size="264,171"
+          Id="Package\Load Fact"
+          TopLeft="891,226" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="822,379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69,-67.5"
+              Start="0,0"
+              End="61.5,-67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.5,0"
+                    Point2="34.5,0"
+                    Point3="34.5,-4" />
+                  <mssgle:LineSegment
+                    End="34.5,-63.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.5,-63.5"
+                    Point2="34.5,-67.5"
+                    Point3="38.5,-67.5" />
+                  <mssgle:LineSegment
+                    End="61.5,-67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Stage Loan Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Stage Loan Data\File LoanOrigination"
+          TopLeft="248,125" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Stage Loan Data\Stage LoanOrigination"
+          TopLeft="200,316" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Stage Loan Data\File LoanService"
+          TopLeft="497,125" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Stage Loan Data\Stage LoanService"
+          TopLeft="493,212" />
+        <EdgeLayout
+          Id="Package\Stage Loan Data.Paths[Flat File Source Output]"
+          TopLeft="575,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Stage Loan Data\add FileName"
+          TopLeft="191,207" />
+        <EdgeLayout
+          Id="Package\Stage Loan Data.Paths[Flat File Source Output1]"
+          TopLeft="334,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-71.5,40"
+              Start="0,0"
+              End="-71.5,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
+                  <mssgle:LineSegment
+                    End="-67.5,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.5,20"
+                    Point2="-71.5,20"
+                    Point3="-71.5,24" />
+                  <mssgle:LineSegment
+                    End="-71.5,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage Loan Data.Paths[Derived Column Output]"
+          TopLeft="262.5,249">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,67"
+              Start="0,0"
+              End="29,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="25,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,33.5"
+                    Point2="29,33.5"
+                    Point3="29,37.5" />
+                  <mssgle:LineSegment
+                    End="29,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage Loan Data\Stage LoanOrigination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage Loan Data\Stage LoanService">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

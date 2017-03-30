@@ -1,0 +1,2444 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2017 11:04:47 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WINDOWS-VIJNPTI"
+  DTS:CreatorName="WINDOWS-VIJNPTI\spencer.swindell"
+  DTS:DTSID="{7A17F1E4-6342-47E3-BF69-D87A1F7A2323}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="MSA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{4F2A0784-D3D7-461E-BC3E-7B88F4879705}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Divisions]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2A0F6835-2F9C-4C54-96E7-98523BD5FBCF}"
+      DTS:ObjectName="Divisions">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\dev\Presentations\ApplyingDataWarehouseTechniques\MetroDivisions.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Freddie]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CFD04E83-88AB-4D09-A330-4256C92B9384}"
+      DTS:ObjectName="Freddie">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Freddie;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MSA Codes Clean]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C4DFBBB3-F818-4DEA-89C0-70B376A307A4}"
+      DTS:ObjectName="MSA Codes Clean">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowsToSkip="3"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\temp\msa_codes_clean.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODE"
+              DTS:DTSID="{8F563B5A-7FED-4B79-B489-C5804030FFB3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MSA DESCRIPTION  (#939)"
+              DTS:DTSID="{1F3D205F-686B-4C8C-A84F-19CFA8DFA37A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MSACodes]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{A7159BE2-0D82-4330-BC03-78129A4E2223}"
+      DTS:ObjectName="MSACodes">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\dev\Presentations\ApplyingDataWarehouseTechniques\List1.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[msa_codes_2007_to_2011.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D7B4F543-7F54-4094-92A0-B793311518EA}"
+      DTS:ObjectName="msa_codes_2007_to_2011.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\dev\Presentations\ApplyingDataWarehouseTechniques\msa_codes_2007_to_2011.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Convert to Tab Delimited"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{81C80150-929A-4B18-9ABB-3F02DB0A3087}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert to Tab Delimited"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_0540b03cfd4a4380a41f67e70ea9f671"
+          VSTAMajorVersion="14"
+          VSTAMinorVersion="0"
+          Language="CSharp">
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_0540b03cfd4a4380a41f67e70ea9f671")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_0540b03cfd4a4380a41f67e70ea9f671")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="ST_0540b03cfd4a4380a41f67e70ea9f671.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{cd474e56-8abd-4eb9-bae9-9f91b6d2ede4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_0540b03cfd4a4380a41f67e70ea9f671</RootNamespace>
+    <AssemblyName>ST_0540b03cfd4a4380a41f67e70ea9f671</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+         <Generator>ResXFileCodeGenerator</Generator>
+         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+             <AutoGen>True</AutoGen>
+         <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+         <Generator>SettingsSingleFileGenerator</Generator>
+         <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+         <AutoGen>True</AutoGen>
+         <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+         <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask"
+                           HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}"
+                           ApplicationType="usd"
+                           Language="cs"
+                           TemplatesPath=""
+                           DebugInfoCommandLine=""
+                           DebugInfoWorkingDir=""
+                           IconImageList=""/>
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex="">
+        </Host>
+        <ProjectClient>
+            <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.IO;
+#endregion
+
+namespace ST_0540b03cfd4a4380a41f67e70ea9f671
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+		/// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+		public void Main()
+		{
+            // open up the file
+            object rawConnection = Dts.Connections["msa_codes_2007_to_2011.txt"].AcquireConnection(Dts.Transaction);
+            string filePath = (string)rawConnection;
+
+            try
+            {
+                // open a streamreader to read the file
+                StreamReader sr = new StreamReader(filePath);
+
+                // open a streamreader to write to new file
+                string newFilePath = @"C:\temp\msa_codes_clean.txt";
+                StreamWriter sw = new StreamWriter(newFilePath);
+
+                while (!sr.EndOfStream)
+                {
+                    //convert three spaces to tab 
+                    string line = sr.ReadLine().Replace("   ", "\t");
+                    sw.WriteLine(line);
+                }
+                
+                // close the streams
+                sw.Close();
+                sr.Close();
+
+                // dispose the streams
+                sw.Dispose();
+                sr.Dispose();
+            }
+            finally
+            {
+                Dts.Connections["msa_codes_2007_to_2011.txt"].ReleaseConnection(rawConnection);
+            }
+           
+            
+
+
+            
+			Dts.TaskResult = (int)ScriptResults.Success;
+		}
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_0540b03cfd4a4380a41f67e70ea9f671</msb:CodeName>
+		<msb:DisplayName>ST_0540b03cfd4a4380a41f67e70ea9f671</msb:DisplayName>
+		<msb:ProjectId>{63587DE9-8C1D-4358-B78D-B770BBEBEFD8}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_0540b03cfd4a4380a41f67e70ea9f671.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_0540b03cfd4a4380a41f67e70ea9f671.Properties.Settings.get_Default():ST_0540b03cfd4a4380a41f67e70ea9f671.Properties.Sett" +
+    "ings")]
+
+namespace ST_0540b03cfd4a4380a41f67e70ea9f671.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_0540b03cfd4a4380a41f67e70ea9f671.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_0540b03cfd4a4380a41f67e70ea9f671.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_0540b03cfd4a4380a41f67e70ea9f671.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_0540b03cfd4a4380a41f67e70ea9f671.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_0540b03cfd4a4380a41f67e70ea9f671.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_0540b03cfd4a4380a41f67e70ea9f671.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHeY1lgAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAli8A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEQvAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAnA8AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAB4
+LwAAAAAAAEgAAAACAAUAgCEAAAwNAAABAAAAAAAAAIwuAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswAwCrAAAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACgIo
+EAAACm8TAAAKbxQAAAoKBnQdAAABCwdzFQAACgxyNwAAcHMWAAAKDSsfCG8XAAAKcm8AAHBydwAA
+cG8YAAAKEwQJEQRvGQAACghvGgAACizZCW8bAAAKCG8cAAAKCW8dAAAKCG8eAAAK3hwCKBAAAApv
+EQAACnIBAABwbxIAAAoGbx8AAArcAigQAAAKFm8gAAAKKgABEAAAAgAtAFWCABwAAAAAHgIoIQAA
+CioeAigiAAAKKq5+AQAABC0ecnsAAHDQAwAAAigjAAAKbyQAAApzJQAACoABAAAEfgEAAAQqGn4C
+AAAEKh4CgAIAAAQqGn4DAAAEKh4CKCYAAAoqLnMIAAAGgAMAAAQqAABCU0pCAQABAAAAAAAMAAAA
+djQuMC4zMDMxOQAAAAAFAGwAAAAcBAAAI34AAIgEAAAEBgAAI1N0cmluZ3MAAAAAjAoAAPAAAAAj
+VVMAfAsAABAAAAAjR1VJRAAAAIwLAACAAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJAwAAAPoBMwAW
+AAABAAAAIgAAAAUAAAAGAAAACQAAAAEAAAAmAAAAAgAAABAAAAABAAAAAgAAAAMAAAAEAAAAAQAA
+AAQAAAABAAAAAQAAAAAAkwMBAAAAAAAGAE8C6QQGAN4C6QQGAJsB1gQPAF0FAAAGAMgBMQQGADIC
+MQQGABMCMQQGAMUCMQQGAG8CMQQGAIgCMQQGAN8BMQQGAPoBAgMKAKMCQgMKAAwBQgMGANIF1AMG
+AHMELgAGALEELgAGANsD1AMGAH4B1gQGAI8ECQUGAGcEDAQOAE4BfQMOAK8BfQMOACgB9wMGAGMB
+6QQKAGsDQgMSAKgFpAASAJ8EpAAGABwD1AMGAIAELgAGAL4ELgAGANcA1AMGAIAA1AMGAPgFMQQA
+AAAAJQAAAAAAAQABAAEAEADsAwEAOQABAAEAAAAQABAFbAU9AAEAAwAAARAAmwVsBWEAAwAHAAMB
+AADEBQAASQAEAAoAEQDgA4QAEQD8AIgAEQBwAIwABgZXAJAAVoC0BZMAVoDcAJMAUCAAAAAAhgDy
+AwYAAQAYIQAAAACGGMkEBgABACAhAAAAAIMYyQQGAAEAKCEAAAAAkwiLBJcAAQBUIQAAAACTCOQA
+nAABAFshAAAAAJMI8AChAAEAYyEAAAAAlgjZBacAAgBqIQAAAACGGMkEBgACAHIhAAAAAJEYzwSs
+AAIAAAABAPwCCQDJBAEAEQDJBAYAGQDJBAoAKQDJBBAAMQDJBBAAOQDJBBAAQQDJBBAASQDJBBAA
+UQDJBBAAWQDJBBAAYQDJBBAAaQDJBAYAmQDJBAYAuQDJBBUAyQDJBAYAcQC8BSUA0QCkBSoA2QDL
+Ay8A0QAhBDUA4QBDBDkAgQDJBBAAiQDJBBAA8QDEAD4A6QBoAEIA+QDNABAAgQC7A0gA+QBAAQYA
+8QBAAQYA+QBGAQYA8QBGAQYA4QBVBEwA0QDlBQEAcQDJBAYAeQDJBAYAAQGSAFEAAQH0BVoAoQDJ
+BGAAwQDJBAYACAAUAHoACAAYAH8AKQBzAOcALgALAL8ALgATAMgALgAbAOcALgAjAPAALgArABkB
+LgAzABkBLgA7ABkBLgBDAPAALgBLAB8BLgBTABkBLgBbADYBQwBjAH8ASQBzAOcAYQB7AH8AYwBr
+AH8AGwADAAEABAADAAAAjwSwAAAABAG1AAAA3QW6AAIABAADAAIABQAFAAEABgAFAAIABwAHAASA
+AAABAAAAlRiTTwAAAAAAAAEAAAAEAAAAAAAAAAAAAABoAF8AAAAAAA0AAAAAAAAAAAAAAHEAIwMA
+AAAABAAAAAAAAAAAAAAAaADUAwAAAAANAAAAAAAAAAAAAABxADgAAAAAAAAAAAABAAAAGgUAAAUA
+AgAAAABTVF8wNTQwYjAzY2ZkNGE0MzgwYTQxZjY3ZTcwZWE5ZjY3MQA8TW9kdWxlPgBTeXN0ZW0u
+SU8ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3JsaWIAUmVwbGFj
+ZQBkZWZhdWx0SW5zdGFuY2UAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUATWlj
+cm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZQBSZWFkTGluZQBXcml0ZUxpbmUAVHlwZQBGYWls
+dXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBWU1RBUlRTY3JpcHRP
+YmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UAQ2xvc2UARGlzcG9zZQBFZGl0
+b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVz
+ZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmli
+dXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFy
+Z2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3Nl
+bWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUA
+QXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNT
+Y3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVu
+dGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAdmFsdWUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmlu
+ZwBTdHJpbmcATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2
+ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVu
+dE1vZGVsAFNUXzA1NDBiMDNjZmQ0YTQzODBhNDFmNjdlNzBlYTlmNjcxLmRsbABnZXRfRW5kT2ZT
+dHJlYW0AZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0u
+Q29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBnZXRfVHJhbnNhY3Rpb24AU3lzdGVt
+LlJlZmxlY3Rpb24AQWNxdWlyZUNvbm5lY3Rpb24AUmVsZWFzZUNvbm5lY3Rpb24AQ3VsdHVyZUlu
+Zm8AU3RyZWFtUmVhZGVyAFRleHRSZWFkZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBDb25uZWN0aW9u
+TWFuYWdlcgBTdHJlYW1Xcml0ZXIAVGV4dFdyaXRlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdu
+b3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBT
+VF8wNTQwYjAzY2ZkNGE0MzgwYTQxZjY3ZTcwZWE5ZjY3MS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5y
+ZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfMDU0MGIwM2NmZDRhNDM4MGE0MWY2N2U3MGVhOWY2
+NzEuUHJvcGVydGllcwBTZXR0aW5ncwBnZXRfQ29ubmVjdGlvbnMAU3VjY2VzcwBnZXRfRHRzAFNj
+cmlwdFJlc3VsdHMAT2JqZWN0AGdldF9EZWZhdWx0AHNldF9UYXNrUmVzdWx0AGdldF9Bc3NlbWJs
+eQAAAAAANW0AcwBhAF8AYwBvAGQAZQBzAF8AMgAwADAANwBfAHQAbwBfADIAMAAxADEALgB0AHgA
+dAAAN0MAOgBcAHQAZQBtAHAAXABtAHMAYQBfAGMAbwBkAGUAcwBfAGMAbABlAGEAbgAuAHQAeAB0
+AAAHIAAgACAAAAMJAABxUwBUAF8AMAA1ADQAMABiADAAMwBjAGYAZAA0AGEANAAzADgAMABhADQA
+MQBmADYANwBlADcAMABlAGEAOQBmADYANwAxAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBz
+AG8AdQByAGMAZQBzAAAAAAD5leoRXxsDSLEQpaoaqnObAAQgAQEIAyAAAQUgAQEREQQgAQEOBSAB
+ARFZCQcFHA4SQRJFDgQgABJpBCAAEm0FIAEScRwDIAAcBCABHBwDIAAOBSACDg4OAyAAAgQgAQEc
+CAABEoCBEYCFBSAAEoCJByACAQ4SgIkIt3pcVhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYSUQMG
+ElUDBhIQAgYIAwYRFAQAABJRBAAAElUFAAEBElUEAAASEAMAAAEECAASUQQIABJVBAgAEhAIAQAI
+AAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NUXzA1NDBi
+MDNjZmQ0YTQzODBhNDFmNjdlNzBlYTlmNjcxAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMTcA
+AEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNQEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUS
+Lk5FVCBGcmFtZXdvcmsgNC41tAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291
+cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1
+YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVz
+b3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAGwvAAAAAAAAAAAAAIYvAAAAIAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAB4LwAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/
+JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQCTT5UYAAABAJNPlRg/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAVABfADAANQA0ADAAYgAwADMAYwBmAGQANABhADQAMwA4ADAAYQA0ADEAZgA2ADcAZQA3
+ADAAZQBhADkAZgA2ADcAMQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA2ADIAOQAzAC4AMgAwADMANwAxAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfADAANQA0ADAAYgAwADMAYwBmAGQANABhADQAMwA4ADAAYQA0ADEAZgA2ADcAZQA3ADAA
+ZQBhADkAZgA2ADcAMQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA3AAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8AMAA1ADQAMABiADAAMwBjAGYAZAA0AGEANAAzADgAMABhADQAMQBmADYA
+NwBlADcAMABlAGEAOQBmADYANwAxAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfADAANQA0ADAAYgAwADMAYwBmAGQANABhADQAMwA4ADAAYQA0ADEAZgA2ADcA
+ZQA3ADAAZQBhADkAZgA2ADcAMQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4ANgAyADkAMwAuADIAMAAzADcAMQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANgAyADkAMwAuADIAMAAzADcAMQAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAACYPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Converted File"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{7316455E-89E2-4B85-857D-F243F3784C14}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Converted File"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{C4DFBBB3-F818-4DEA-89C0-70B376A307A4}"
+          TaskDestinationPath="{C4DFBBB3-F818-4DEA-89C0-70B376A307A4}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load MSA File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2B6CE366-F93D-417B-8735-044DE4632A9C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load MSA File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load MSA File\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'List 1$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MSA File\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSACodes]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSACodes]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CBSA Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CBSA Code]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CBSA Code]"
+                      name="CBSA Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metro Division Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Metro Division Code]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metro Division Code]"
+                      name="Metro Division Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CSA Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CSA Code]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CSA Code]"
+                      name="CSA Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CBSA Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CBSA Title]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CBSA Title]"
+                      name="CBSA Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metropolitan/Micropolitan Statistical Area]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Metropolitan/Micropolitan Statistical Area]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metropolitan/Micropolitan Statistical Area]"
+                      name="Metropolitan/Micropolitan Statistical Area"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metropolitan Division Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Metropolitan Division Title]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metropolitan Division Title]"
+                      name="Metropolitan Division Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CSA Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CSA Title]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CSA Title]"
+                      name="CSA Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[County/County Equivalent]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[County/County Equivalent]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[County/County Equivalent]"
+                      name="County/County Equivalent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[State Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[State Name]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[State Name]"
+                      name="State Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[FIPS State Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[FIPS State Code]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[FIPS State Code]"
+                      name="FIPS State Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[FIPS County Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[FIPS County Code]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[FIPS County Code]"
+                      name="FIPS County Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Central/Outlying County]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Central/Outlying County]"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Central/Outlying County]"
+                      name="Central/Outlying County"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CBSA Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="CBSA Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Metro Division Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metro Division Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CSA Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="CSA Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CBSA Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="CBSA Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Metropolitan/Micropolitan Statistical Area]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metropolitan/Micropolitan Statistical Area" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Metropolitan Division Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metropolitan Division Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[CSA Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="CSA Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[County/County Equivalent]"
+                      dataType="wstr"
+                      length="255"
+                      name="County/County Equivalent" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[State Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="State Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[FIPS State Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="FIPS State Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[FIPS County Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="FIPS County Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].ExternalColumns[Central/Outlying County]"
+                      dataType="wstr"
+                      length="255"
+                      name="Central/Outlying County" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CBSA Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CBSA Code]"
+                      name="CBSA Code" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Metro Division Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Metro Division Code]"
+                      name="Metro Division Code" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CSA Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CSA Code]"
+                      name="CSA Code" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CBSA Title]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CBSA Title]"
+                      name="CBSA Title" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Metropolitan/Micropolitan Statistical Area]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Metropolitan/Micropolitan Statistical Area]"
+                      name="Metropolitan/Micropolitan Statistical Area" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Metropolitan Division Title]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Metropolitan Division Title]"
+                      name="Metropolitan Division Title" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CSA Title]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[CSA Title]"
+                      name="CSA Title" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[County/County Equivalent]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[County/County Equivalent]"
+                      name="County/County Equivalent" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[State Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[State Name]"
+                      name="State Name" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[FIPS State Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[FIPS State Code]"
+                      name="FIPS State Code" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[FIPS County Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[FIPS County Code]"
+                      name="FIPS County Code" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Central/Outlying County]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[Central/Outlying County]"
+                      name="Central/Outlying County" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MSA File\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[MSACodeListing]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MSA File\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Freddie]"
+                  connectionManagerRefId="Package.ConnectionManagers[Freddie]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CBSA Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CBSA Code"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CBSA Code]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CBSA Code]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Metro Division Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Metro Division Code"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Metro Division Code]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metro Division Code]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CSA Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CSA Code"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CSA Code]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CSA Code]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CBSA Title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CBSA Title"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CBSA Title]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CBSA Title]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Metropolitan/Micropolitan Statistical Area]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Metropolitan/Micropolitan Statistical Area"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Metropolitan/Micropolitan Statistical Area]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metropolitan/Micropolitan Statistical Area]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Metropolitan Division Title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Metropolitan Division Title"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Metropolitan Division Title]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Metropolitan Division Title]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CSA Title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CSA Title"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CSA Title]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[CSA Title]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[County/County Equivalent]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="County/County Equivalent"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[County/County Equivalent]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[County/County Equivalent]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State Name"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State Name]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[State Name]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FIPS State Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FIPS State Code"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIPS State Code]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[FIPS State Code]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FIPS County Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FIPS County Code"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIPS County Code]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[FIPS County Code]" />
+                    <inputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Central/Outlying County]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Central/Outlying County"
+                      externalMetadataColumnId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Central/Outlying County]"
+                      lineageId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output].Columns[Central/Outlying County]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CBSA Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="CBSA Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Metro Division Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metro Division Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CSA Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="CSA Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CBSA Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="CBSA Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Metropolitan/Micropolitan Statistical Area]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metropolitan/Micropolitan Statistical Area" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Metropolitan Division Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metropolitan Division Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CSA Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="CSA Title" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[County/County Equivalent]"
+                      dataType="wstr"
+                      length="255"
+                      name="County/County Equivalent" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="State Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIPS State Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="FIPS State Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIPS County Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="FIPS County Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Central/Outlying County]"
+                      dataType="wstr"
+                      length="255"
+                      name="Central/Outlying County" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MSA File\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load MSA File.Paths[Excel Source Output]"
+              endId="Package\Load MSA File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Load MSA File\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load MSA Text File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{DC9A6631-E80A-49B5-A2E9-903EE05A0682}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load MSA Text File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load MSA Text File\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load MSA Text File\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MSA Text File\Data Conversion.Inputs[Data Conversion Input].Columns[Code]"
+                      cachedDataType="r8"
+                      cachedName="Code"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Code]" />
+                    <inputColumn
+                      refId="Package\Load MSA Text File\Data Conversion.Inputs[Data Conversion Input].Columns[Metropolitan Statistical Area]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Metropolitan Statistical Area"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Metropolitan Statistical Area]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load MSA Text File\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Code_Clean]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Code_Clean]"
+                      name="Code_Clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Division]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Division]"
+                      name="Division"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Metropolitan Statistical Area]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load MSA Text File\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MSA Text File\Filter MSA"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Filter MSA"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load MSA Text File\Filter MSA.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MSA Text File\Filter MSA.Inputs[Conditional Split Input].Columns[Code_Clean]"
+                      cachedDataType="i4"
+                      cachedName="Code_Clean"
+                      lineageId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Code_Clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MSA Text File\Filter MSA.Outputs[DivisionCode]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="DivisionCode"
+                  synchronousInputId="Package\Load MSA Text File\Filter MSA.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Code_Clean]} - ((#{Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Code_Clean]} / 10) * 10) == 4</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Code_Clean - ((Code_Clean / 10) * 10) == 4</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MSA Text File\Filter MSA.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Load MSA Text File\Filter MSA.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MSA Text File\Filter MSA.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load MSA Text File\Filter MSA.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Filter MSA.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Filter MSA.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Filter MSA.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Filter MSA.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MSA Text File\Metro Divisions"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Metro Divisions"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet2$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MSA Text File\Metro Divisions.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Divisions]"
+                  connectionManagerRefId="Package.ConnectionManagers[Divisions]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Code]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].ExternalColumns[Code]"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Metropolitan Statistical Area]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].ExternalColumns[Metropolitan Statistical Area]"
+                      length="255"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].Columns[Metropolitan Statistical Area]"
+                      name="Metropolitan Statistical Area"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].ExternalColumns[Code]"
+                      dataType="r8"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output].ExternalColumns[Metropolitan Statistical Area]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metropolitan Statistical Area" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[Code]"
+                      dataType="r8"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[Code]"
+                      name="Code" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[Metropolitan Statistical Area]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[Metropolitan Statistical Area]"
+                      name="Metropolitan Statistical Area" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MSA Text File\MSA Codes"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="MSA Codes"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MSA Text File\MSA Codes.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSA Codes Clean]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSA Codes Clean]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].Columns[Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].ExternalColumns[CODE]"
+                      lineageId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].ExternalColumns[MSA DESCRIPTION  (#939)]"
+                      length="500"
+                      lineageId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].ExternalColumns[CODE]"
+                      dataType="i4"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].ExternalColumns[MSA DESCRIPTION  (#939)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="MSA DESCRIPTION  (#939)" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MSA Text File\Stage MSACodes"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage MSACodes"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[MSACodes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MSA Text File\Stage MSACodes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Freddie]"
+                  connectionManagerRefId="Package.ConnectionManagers[Freddie]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input].Columns[Code]"
+                      cachedDataType="i4"
+                      cachedName="Code"
+                      externalMetadataColumnId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      lineageId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].Columns[Code]" />
+                    <inputColumn
+                      refId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output].Columns[Description]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      dataType="i4"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Description" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MSA Text File\Stage MSACodes.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Stage MSACodes.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Stage MSACodes.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Stage MSACodes.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Stage MSACodes.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MSA Text File\Stage MSADivision"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage MSADivision"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[MSADivision]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MSA Text File\Stage MSADivision.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Freddie]"
+                  connectionManagerRefId="Package.ConnectionManagers[Freddie]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input].Columns[Division]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Division"
+                      externalMetadataColumnId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input].ExternalColumns[Division]"
+                      lineageId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Division]" />
+                    <inputColumn
+                      refId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input].Columns[Code_Clean]"
+                      cachedDataType="i4"
+                      cachedName="Code_Clean"
+                      externalMetadataColumnId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      lineageId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output].Columns[Code_Clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      dataType="i4"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input].ExternalColumns[Division]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Division" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MSA Text File\Stage MSADivision.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Stage MSADivision.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Stage MSADivision.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MSA Text File\Stage MSADivision.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MSA Text File\Stage MSADivision.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load MSA Text File.Paths[Data Conversion Output]"
+              endId="Package\Load MSA Text File\Filter MSA.Inputs[Conditional Split Input]"
+              name="Data Conversion Output"
+              startId="Package\Load MSA Text File\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load MSA Text File.Paths[DivisionCode]"
+              endId="Package\Load MSA Text File\Stage MSADivision.Inputs[OLE DB Destination Input]"
+              name="DivisionCode"
+              startId="Package\Load MSA Text File\Filter MSA.Outputs[DivisionCode]" />
+            <path
+              refId="Package\Load MSA Text File.Paths[Excel Source Output]"
+              endId="Package\Load MSA Text File\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Load MSA Text File\Metro Divisions.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Load MSA Text File.Paths[Flat File Source Output]"
+              endId="Package\Load MSA Text File\Stage MSACodes.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load MSA Text File\MSA Codes.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0F286EB9-CCCB-4102-AF00-3C43BFD2F655}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFD04E83-88AB-4D09-A330-4256C92B9384}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stage.MSACodeListing" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FE7A12AB-5974-40F8-827C-93ED3FD38FEB}"
+      DTS:From="Package\Truncate Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load MSA File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Convert to Tab Delimited"
+          TopLeft="119,106" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Delete Converted File"
+          TopLeft="112,331" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Load MSA Text File"
+          TopLeft="103,203" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Truncate Stage"
+          TopLeft="487,152" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Load MSA File"
+          TopLeft="462,270" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="562.5,194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28,76"
+              Start="0,0"
+              End="-28,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="-4,38" />
+                  <mssgle:LineSegment
+                    End="-24,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24,38"
+                    Point2="-28,38"
+                    Point3="-28,42" />
+                  <mssgle:LineSegment
+                    End="-28,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load MSA Text File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Load MSA Text File\Filter MSA"
+          TopLeft="609,288" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load MSA Text File\Stage MSACodes"
+          TopLeft="298,227" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load MSA Text File\Metro Divisions"
+          TopLeft="592,117" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Load MSA Text File\MSA Codes"
+          TopLeft="312,116" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load MSA Text File\Data Conversion"
+          TopLeft="588,205" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load MSA Text File\Stage MSADivision"
+          TopLeft="587,365" />
+        <EdgeLayout
+          Id="Package\Load MSA Text File.Paths[Flat File Source Output]"
+          TopLeft="377.25,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load MSA Text File.Paths[Excel Source Output]"
+          TopLeft="666.5,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load MSA Text File.Paths[DivisionCode]"
+          TopLeft="671,330">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-28.66634765625,8.87548828125,57.3326953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load MSA Text File.Paths[Data Conversion Output]"
+          TopLeft="669,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load MSA Text File\Stage MSACodes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load MSA Text File\Metro Divisions">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load MSA Text File\Stage MSADivision">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load MSA File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load MSA File\Excel Source"
+          TopLeft="413,64" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load MSA File\OLE DB Destination"
+          TopLeft="253,241" />
+        <EdgeLayout
+          Id="Package\Load MSA File.Paths[Excel Source Output]"
+          TopLeft="482.5,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144,135"
+              Start="0,0"
+              End="-144,127.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.5"
+                    Point2="0,67.5"
+                    Point3="-4,67.5" />
+                  <mssgle:LineSegment
+                    End="-140,67.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140,67.5"
+                    Point2="-144,67.5"
+                    Point3="-144,71.5" />
+                  <mssgle:LineSegment
+                    End="-144,127.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load MSA File\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load MSA File\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
