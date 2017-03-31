@@ -104,7 +104,7 @@
     <Build Include="stage\Tables\MSACodeListing.sql" />
     <Build Include="stage\Views\vLoanServiceStatus.sql" />
     <Build Include="dim\LoanServiceStatus.sql" />
-    <Build Include="etl\LoanServiceStatusLoad.sql" />
+    <Build Include="etl\Stored Procedures\LoanServiceStatusLoad.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\AddGenericPostalCodes.sql" />
