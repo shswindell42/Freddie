@@ -1,6 +1,6 @@
 ﻿CREATE VIEW [stage].[vProperty]
 AS
-SELECT PropertyType
+SELECT DISTINCT PropertyType
 	,PropertyTypeDesc = CASE PropertyType
 				WHEN 'CO' THEN 'Condo'
 				WHEN 'LH' THEN 'Leasehold'
