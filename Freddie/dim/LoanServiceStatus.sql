@@ -12,3 +12,8 @@
 	CreatedDate datetime,
 	ModifiedDate datetime
 )
+GO
+
+CREATE NONCLUSTERED INDEX NCI_LoanServiceStatus ON dim.LoanServiceStatus (DelinquencyStatus, RepurchaseFlag, ModificationFlag, ZeroBalanceCode)
+INCLUDE (LoanServiceStatusKey)
+GO

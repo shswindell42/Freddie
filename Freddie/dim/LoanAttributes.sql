@@ -23,3 +23,21 @@
 	,CreatedDate datetime
 	,ModifiedDate datetime
 )
+GO
+
+CREATE NONCLUSTERED INDEX NCI_LoanAttriutes ON dim.LoanAttributes
+(
+	[FirstTimeHomeBuyerFlag]
+	,[MortgageInsurancePercentage]
+	,[Units]
+	,[OccupancyStatus]
+	,[Channel]
+	,[PPMFlag]
+	,[ProductType]
+	,[LoanPurpose]
+	,[OriginalLoanTerm]
+	,[NumberOfBorrowers]
+	,[SuperConformingFlag]
+)
+INCLUDE (LoanAttributeKey);
+GO

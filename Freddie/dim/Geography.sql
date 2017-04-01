@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dim.[Geography]
+﻿CREATE TABLE [dim].[Geography]
 (
 	GeographyKey INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[PostalCode]        VARCHAR (5)   NULL UNIQUE,
@@ -11,3 +11,7 @@
 	CreatedDate			 DATETIME,
 	ModifiedDate		 DATETIME
 )
+GO
+
+CREATE NONCLUSTERED INDEX NCI_Geography ON dim.Geography (PostalCode) INCLUDE (GeographyKey);
+GO
