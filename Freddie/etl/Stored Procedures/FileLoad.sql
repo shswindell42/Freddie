@@ -7,8 +7,8 @@ INSERT INTO dim.[File]
 	FileName
 	,CreatedDate
 )
-SELECT DISTINCT s.[FileName], GETDATE()
-FROM stage.LoanOrigination s
+SELECT s.[FileName], GETDATE()
+FROM stage.vFile s
 	LEFT OUTER JOIN dim.[File] d
 		on s.FileName = d.filename
 WHERE d.FileKey is null

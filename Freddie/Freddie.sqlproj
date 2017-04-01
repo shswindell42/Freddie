@@ -105,6 +105,10 @@
     <Build Include="stage\Views\vLoanServiceStatus.sql" />
     <Build Include="dim\LoanServiceStatus.sql" />
     <Build Include="etl\Stored Procedures\LoanServiceStatusLoad.sql" />
+    <Build Include="fact\LoanService.sql" />
+    <Build Include="stage\Views\vFile.sql" />
+    <Build Include="etl\Stored Procedures\LoanServiceFactLoad.sql" />
+    <Build Include="stage\Tables\MSACodeFile.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\AddGenericPostalCodes.sql" />
