@@ -36,9 +36,9 @@ BEGIN TRY
 	)
 	select s.LoanSequenceNumber
 		,ISNULL(CreditKey, -1)
-		,FirstPaymentMonthKey = fpm.CalendarKey
+		,FirstPaymentMonthKey = s.FirstPaymentMonth
 		,LoanAttributesKey = la.LoanAttributeKey
-		,MaturityMonthKey = mm.CalendarKey
+		,MaturityMonthKey = s.MaturityMonth
 		,MetropolitanAreaKey = ma.MetropolitanAreaKey
 		,GeographyKey = g.GeographyKey
 		,PropertyKey
@@ -53,8 +53,6 @@ BEGIN TRY
 	from stage.LoanOrigination s
 		left outer join dim.Credit c
 			on s.CreditScore = c.CreditScore
-		left outer join dim.Calendar fpm
-			on s.FirstPaymentMonth = fpm.CalendarKey
 		left outer join dim.LoanAttributes la
 			on la.[FirstTimeHomeBuyerFlag] = s.[FirstTimeHomeBuyerFlag]
 					and la.[MortgageInsurancePercentage] = s.[MortgageInsurancePercentage]
@@ -67,8 +65,6 @@ BEGIN TRY
 					and la.[OriginalLoanTerm] = s.[OriginalLoanTerm]
 					and la.[NumberOfBorrowers] = s.[NumberOfBorrowers]
 					and la.[SuperConformingFlag] = s.[SuperConformingFlag]
-		left outer join dim.Calendar mm
-			on s.MaturityMonth = mm.CalendarKey
 		left outer join dim.MetropolitanArea ma
 			on s.MSACode = ma.MSACode
 		left outer join dim.Geography g
