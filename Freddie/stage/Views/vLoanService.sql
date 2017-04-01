@@ -26,4 +26,6 @@ SELECT [LoanSequenceNumber]
 					+ ((ZeroBalanceEffectiveMonth - DDLPI) 
 						* LAG(ActualUPB) OVER (PARTITION BY LoanSequenceNumber ORDER BY ReportingMonth) * (30.0/360.0) * (InterestRate - 0.35) / 100)
 	,[ModificationCost]
+	,[MonthlyPayment] = LAG(ActualUPB, 1) OVER (PARTITION BY LoanSequenceNumber ORDER BY ReportingMonth) - ActualUPB
+	,FileName
 FROM stage.LoanService

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE stage.LoanService (
     LoanSequenceNumber        VARCHAR (12) NULL,
     ReportingMonth            INT          NULL,
-    ActualUPB                 REAL         NULL,
+    ActualUPB                 MONEY        NULL,
     DelinquencyStatus         VARCHAR (3)  NULL,
     LoanAge                   SMALLINT     NULL,
     MonthsToMaturity          SMALLINT     NULL,
@@ -20,6 +20,7 @@
     MaintenanceCosts          MONEY        NULL,
     TaxesInsurance            MONEY        NULL,
     MiscExpenses              MONEY        NULL,
-    ModificationCost          MONEY        NULL
+    ModificationCost          MONEY        NULL,
+	FileName				  VARCHAR(100) NULL
 );
 
