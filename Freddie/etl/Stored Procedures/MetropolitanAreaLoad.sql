@@ -52,6 +52,25 @@ BEGIN TRY
 			ON s.Code = d.MSACode
 	WHERE d.MetropolitanAreaKey IS NULL
 
+	-- load any inferred members
+	INSERT INTO dim.MetropolitanArea
+	(
+		MSACode 
+		,AreaDescription 
+		,DivisionIndicator 
+		,CreatedDate 
+	)
+	select distinct s.MSACode
+		,'Inferred'
+		,'Inferred'
+		,GETDATE()
+	from stage.LoanOrigination s
+		left outer join dim.MetropolitanArea m
+			on s.MSACode = m.MSACode
+	where m.MetropolitanAreaKey is null
+
+
+
 	COMMIT
 
 END TRY
