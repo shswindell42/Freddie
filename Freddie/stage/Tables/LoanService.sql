@@ -9,7 +9,7 @@
     ModificationFlag          VARCHAR (1)  NULL,
     ZeroBalanceCode           VARCHAR (2)  NULL,
     ZeroBalanceEffectiveMonth INT          NULL,
-    InterestRate              REAL         NULL,
+    InterestRate              DECIMAL (5, 3) NULL,
     DeferredUPB               MONEY        NULL,
     DDLPI                     INT          NULL,
     MIRecoveries              MONEY        NULL,

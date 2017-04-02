@@ -9,7 +9,7 @@
 	,ActualUPB MONEY
 	,LoanAge smallint
 	,MonthsToMaturity smallint
-	,InterestRate decimal(4,2)
+	,InterestRate decimal(5,3)
 	,DeferredUPB money
 	,MIRecoveries money
 	,NetSalesProceeds money
