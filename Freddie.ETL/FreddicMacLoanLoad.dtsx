@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FreddicMacLoanLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{E7EE872A-6DEE-49DA-94C6-3DA8ACF5A35B}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{6D1665F9-2984-4B10-BAD5-233F2049AD15}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -293,7 +293,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LoanSequenceNumber"
-              DTS:DTSID="{008803F5-4D0C-4936-8C56-8B7B9382852A}"
+              DTS:DTSID="{904E8D15-B118-4BD6-BCEF-24450EF2BD49}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -301,7 +301,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ReportingMonth"
-              DTS:DTSID="{88B1380C-3F80-41D9-8D08-794EF07F6EE6}"
+              DTS:DTSID="{E2650FAB-AB89-47A8-BD8F-7AD866D722AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -309,7 +309,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="ActualUPB"
-              DTS:DTSID="{4723B4EC-4320-4B9F-B5D2-E08A28DF1EF3}"
+              DTS:DTSID="{D9F66B97-7447-40E2-869F-DB310A149E1B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -318,7 +318,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DelinquencyStatus"
-              DTS:DTSID="{034EF8AD-127F-4875-BA79-47750F4FFC66}"
+              DTS:DTSID="{4D03242A-3020-479E-A385-8B43ACDE3271}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -326,7 +326,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="LoanAge"
-              DTS:DTSID="{EABCAF5F-43A7-49D6-AFED-6761832EE5C4}"
+              DTS:DTSID="{42111B2F-E259-46B8-9C73-F5CB33290465}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -334,7 +334,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="MonthsToMaturity"
-              DTS:DTSID="{00E74C78-D7B0-4CBF-B979-27E0A0B5D469}"
+              DTS:DTSID="{806B7907-AF3A-41BD-AE53-A990874C3D82}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -343,7 +343,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RepurchaseFlag"
-              DTS:DTSID="{36FE66CF-D256-4FEC-9749-178D5933E920}"
+              DTS:DTSID="{2B21CF5B-ADED-46BF-A915-3638ECFD3E87}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -352,7 +352,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ModificationFlag"
-              DTS:DTSID="{E26926BB-B432-40C8-AEE4-B81BB0134CF7}"
+              DTS:DTSID="{7D518AD6-1401-45F6-8D2D-B41C47BBE92D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -361,7 +361,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ZeroBalanceCode"
-              DTS:DTSID="{25C15C03-8B8F-435D-936E-E759CE9C1CF6}"
+              DTS:DTSID="{DD5AA9C9-74DC-48D7-A5D7-9AE59033C329}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -369,15 +369,17 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ZeroBalanceEffectiveMonth"
-              DTS:DTSID="{121B393B-DE3C-459B-B33E-A027998DBE49}"
+              DTS:DTSID="{C9D746C4-636E-463E-A0F5-DD199D35402A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x007C_"
-              DTS:DataType="4"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="3"
               DTS:TextQualified="True"
               DTS:ObjectName="InterestRate"
-              DTS:DTSID="{4F4FF81E-AB47-4E3F-9F0E-7CD0757518FE}"
+              DTS:DTSID="{9771786A-C30B-41F1-95DB-6D2C1EA25EC4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -385,7 +387,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="DeferredUPB"
-              DTS:DTSID="{2971731B-69A3-4958-B78C-D9A8527E54F7}"
+              DTS:DTSID="{2869B1C9-EF6C-4E3D-ACF2-47B3A678B48A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -393,7 +395,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="DDLPI"
-              DTS:DTSID="{6A89DAFD-8D42-40CB-AED2-FC1DCD59B549}"
+              DTS:DTSID="{5165CFC8-96DF-45CF-A4A6-8E7CA51092E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -401,7 +403,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="MIRecoveries"
-              DTS:DTSID="{A8EF5E48-AE98-48CE-B99A-0953BC3B2B4D}"
+              DTS:DTSID="{E785C7A3-D918-4F3E-82F8-DAD80E377BFC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -409,7 +411,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="NetSalesProceeds"
-              DTS:DTSID="{4BC088A8-F587-41CC-92E5-02A1EB25C67D}"
+              DTS:DTSID="{54A4C549-FEC6-4C3A-A84B-38148E5648C9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -417,7 +419,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="NonMIRecoveries"
-              DTS:DTSID="{7122A4DF-068A-496F-9B83-02710B440DF6}"
+              DTS:DTSID="{6C0475F2-ADAB-481D-A7F6-F919856CFE4A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -425,7 +427,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="Expenses"
-              DTS:DTSID="{68C47B8D-CF86-4A13-9185-A0D64726A02E}"
+              DTS:DTSID="{B82FF9A7-5989-4051-A43A-4E1DC044571B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -433,7 +435,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="LegalCosts"
-              DTS:DTSID="{0BD1DE99-C1D2-407F-9B98-4292BB1851E0}"
+              DTS:DTSID="{1F398531-8F21-46AD-B742-BDFF195C9E42}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -441,7 +443,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="MaintenanceCosts"
-              DTS:DTSID="{1CDB15E6-A60C-462E-AF5E-69269DD8EE64}"
+              DTS:DTSID="{89D6EA36-C608-44A9-A876-C63E09F80163}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -449,7 +451,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="TaxesInsurance"
-              DTS:DTSID="{473EBAC6-FCFA-48BE-8B30-A3E4CE02F78E}"
+              DTS:DTSID="{B5532E65-66DA-47C6-B04A-B70E3B4F9688}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -457,7 +459,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="MiscExpenses"
-              DTS:DTSID="{F004FA03-D0AB-46FC-8273-67316DC1363E}"
+              DTS:DTSID="{F8464F66-0356-46A4-81CE-DD61533DB7E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -465,7 +467,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="ModificationCost"
-              DTS:DTSID="{50879796-B643-4EA2-8D2F-53309AF0022A}"
+              DTS:DTSID="{10B1A0E3-9ACF-4AD1-A3B6-6DA1D674AE17}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -585,6 +587,7 @@
           <DTS:ObjectData>
             <FileSystemData
               TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
               TaskSourcePath="User::ZipFile"
               TaskIsSourceVariable="True"
               TaskDestinationPath="User::ArchiveFolder"
@@ -1982,12 +1985,14 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\ForEachFile\Load Stage\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[InterestRate]"
-                              dataType="r4"
+                              dataType="numeric"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="IgnoreFailure"
                               externalMetadataColumnId="Package\ForEachFile\Load Stage\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[InterestRate]"
                               lineageId="Package\ForEachFile\Load Stage\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[InterestRate]"
                               name="InterestRate"
+                              precision="5"
+                              scale="3"
                               truncationRowDisposition="IgnoreFailure">
                               <properties>
                                 <property
@@ -2275,8 +2280,10 @@
                               name="ZeroBalanceEffectiveMonth" />
                             <externalMetadataColumn
                               refId="Package\ForEachFile\Load Stage\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[InterestRate]"
-                              dataType="r4"
-                              name="InterestRate" />
+                              dataType="numeric"
+                              name="InterestRate"
+                              precision="5"
+                              scale="3" />
                             <externalMetadataColumn
                               refId="Package\ForEachFile\Load Stage\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].ExternalColumns[DeferredUPB]"
                               dataType="cy"
@@ -2929,8 +2936,10 @@
                               lineageId="Package\ForEachFile\Load Stage\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[ZeroBalanceEffectiveMonth]" />
                             <inputColumn
                               refId="Package\ForEachFile\Load Stage\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].Columns[InterestRate]"
-                              cachedDataType="r4"
+                              cachedDataType="numeric"
                               cachedName="InterestRate"
+                              cachedPrecision="5"
+                              cachedScale="3"
                               externalMetadataColumnId="Package\ForEachFile\Load Stage\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
                               lineageId="Package\ForEachFile\Load Stage\Stage Loan Data\File LoanService.Outputs[Flat File Source Output].Columns[InterestRate]" />
                             <inputColumn
@@ -3062,8 +3071,10 @@
                               name="ZeroBalanceEffectiveMonth" />
                             <externalMetadataColumn
                               refId="Package\ForEachFile\Load Stage\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
-                              dataType="r4"
-                              name="InterestRate" />
+                              dataType="numeric"
+                              name="InterestRate"
+                              precision="5"
+                              scale="3" />
                             <externalMetadataColumn
                               refId="Package\ForEachFile\Load Stage\Stage Loan Data\Stage LoanService.Inputs[OLE DB Destination Input].ExternalColumns[DeferredUPB]"
                               dataType="cy"
@@ -3356,21 +3367,33 @@
         <NodeLayout
           Size="269,42"
           Id="Package\ForEachFile\Load Stage\Truncate Stage Tables and drop indexes"
-          TopLeft="5.50000000000001,5.5" />
+          TopLeft="5.5,5.5" />
         <EdgeLayout
           Id="Package\ForEachFile\Load Stage.PrecedenceConstraints[Constraint]"
-          TopLeft="97.5,47.5">
+          TopLeft="140,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-42.5,60"
               Start="0,0"
-              End="0,52.5">
+              End="-42.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-38.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38.5,30"
+                    Point2="-42.5,30"
+                    Point3="-42.5,34" />
+                  <mssgle:LineSegment
+                    End="-42.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
