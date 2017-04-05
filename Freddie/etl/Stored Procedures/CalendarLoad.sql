@@ -18,3 +18,10 @@ AS
   set @curDate = DATEADD(month, 1, @curDate)
 
   end 
+
+
+  -- add unknown member
+  insert into dim.Calendar
+  (CalendarKey, MonthNumber, MonthName, Quarter, Year)
+  VALUES
+  (0, 0, 'Unknown', 'Unknown', 1900)
