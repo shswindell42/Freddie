@@ -1,0 +1,1535 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b85d1902-f42b-408b-ad10-1660e6279eeb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Freddie</ID>
+  <Name>Freddie</Name>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="56" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6565" scrolltop="-1623" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="34925" y="21034" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Property" left="14973" top="19925" logicalid="27" controlid="1" masterid="0" hint1="0" hint2="0" width="3545" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000d90d00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_Property" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanService" left="5208" top="6031" logicalid="28" controlid="2" masterid="0" hint1="0" hint2="0" width="4736" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00008012000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="fact_LoanService" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="File" left="14496" top="7205" logicalid="29" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b80b0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_File" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="ExternalEntity" left="14973" top="14800" logicalid="30" controlid="4" masterid="0" hint1="0" hint2="0" width="3387" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00003b0d0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_ExternalEntity" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanServiceStatus" left="6904" top="-115" logicalid="31" controlid="5" masterid="0" hint1="0" hint2="0" width="4233" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00008910000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_LoanServiceStatus" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Calendar" left="-2379" top="8862" logicalid="32" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b80b00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_Calendar" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="MetropolitanArea" left="2235" top="17151" logicalid="33" controlid="7" masterid="0" hint1="0" hint2="0" width="3810" height="3572" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000e20e0000f40d0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_MetropolitanArea" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Credit" left="17956" top="9251" logicalid="34" controlid="8" masterid="0" hint1="0" hint2="0" width="3043" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000e30b00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_Credit" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanAttributes" left="10545" top="25474" logicalid="35" controlid="9" masterid="0" hint1="0" hint2="0" width="5768" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00008816000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_LoanAttributes" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Geography" left="4705" top="25474" logicalid="36" controlid="10" masterid="0" hint1="0" hint2="0" width="3440" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000700d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_Geography" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanOrigination" left="8586" top="14638" logicalid="37" controlid="11" masterid="0" hint1="0" hint2="0" width="4128" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00002010000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="fact_LoanOrigination" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12414" top="18488" logicalid="38" controlid="12" masterid="0" hint1="0" hint2="0" width="2859" height="3411" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-Property]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="11" sourceattachpoint="18" destattachpoint="29" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14973" y="21499" />
+              <point x="13773" y="21499" />
+              <point x="13773" y="18788" />
+              <point x="12714" y="18788" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="6726" top="4386" logicalid="39" controlid="13" masterid="0" hint1="0" hint2="0" width="1044" height="1945" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanService-LoanServiceStatus]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="1" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7370" y="4885" />
+              <point x="7370" y="5631" />
+              <point x="7026" y="5631" />
+              <point x="7026" y="6031" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="9644" top="7131" logicalid="40" controlid="14" masterid="0" hint1="0" hint2="0" width="5152" height="1075" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanService-File]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="10" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14496" y="7806" />
+              <point x="11515" y="7806" />
+              <point x="11515" y="7431" />
+              <point x="9944" y="7431" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="321" top="9881" logicalid="41" controlid="15" masterid="0" hint1="0" hint2="0" width="5187" height="955" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanService-Calendar]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="2" sourceattachpoint="15" destattachpoint="32" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="621" y="10436" />
+              <point x="2914" y="10436" />
+              <point x="2914" y="10181" />
+              <point x="5208" y="10181" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="321" top="9331" logicalid="42" controlid="16" masterid="0" hint1="0" hint2="0" width="5187" height="955" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanService-Calendar1]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="2" sourceattachpoint="13" destattachpoint="30" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="621" y="9886" />
+              <point x="2914" y="9886" />
+              <point x="2914" y="9631" />
+              <point x="5208" y="9631" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="321" top="8781" logicalid="43" controlid="17" masterid="0" hint1="0" hint2="0" width="5187" height="955" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanService-Calendar2]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="2" sourceattachpoint="11" destattachpoint="28" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="621" y="9336" />
+              <point x="2914" y="9336" />
+              <point x="2914" y="9081" />
+              <point x="5208" y="9081" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10350" top="9008" logicalid="44" controlid="18" masterid="0" hint1="0" hint2="0" width="5496" height="5930" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-File]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="11" sourceattachpoint="3" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="15446" y="9507" />
+              <point x="15446" y="10044" />
+              <point x="10650" y="10044" />
+              <point x="10650" y="14638" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12414" top="15188" logicalid="45" controlid="19" masterid="0" hint1="0" hint2="0" width="2859" height="824" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-ExternalEntity]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="11" sourceattachpoint="12" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14973" y="15612" />
+              <point x="13844" y="15612" />
+              <point x="13844" y="15488" />
+              <point x="12714" y="15488" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12414" top="14638" logicalid="46" controlid="20" masterid="0" hint1="0" hint2="0" width="2859" height="824" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-ExternalEntity1]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="11" sourceattachpoint="10" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14973" y="15062" />
+              <point x="13844" y="15062" />
+              <point x="13844" y="14938" />
+              <point x="12714" y="14938" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="321" top="11137" logicalid="47" controlid="21" masterid="0" hint1="0" hint2="0" width="8565" height="4651" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-Calendar]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="11" sourceattachpoint="19" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="621" y="11536" />
+              <point x="4603" y="11536" />
+              <point x="4603" y="15488" />
+              <point x="8586" y="15488" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="321" top="10587" logicalid="48" controlid="22" masterid="0" hint1="0" hint2="0" width="8565" height="4651" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-Calendar1]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="11" sourceattachpoint="17" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="621" y="10986" />
+              <point x="4603" y="10986" />
+              <point x="4603" y="14938" />
+              <point x="8586" y="14938" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5745" top="16838" logicalid="49" controlid="23" masterid="0" hint1="0" hint2="0" width="3141" height="849" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-MetropolitanArea]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="11" sourceattachpoint="15" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6045" y="17287" />
+              <point x="6698" y="17287" />
+              <point x="6698" y="17138" />
+              <point x="8586" y="17138" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10900" top="11901" logicalid="50" controlid="24" masterid="0" hint1="0" hint2="0" width="8977" height="3037" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-Credit]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="11" sourceattachpoint="5" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="19477" y="12400" />
+              <point x="19477" y="14238" />
+              <point x="11200" y="14238" />
+              <point x="11200" y="14638" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10900" top="19338" logicalid="51" controlid="25" masterid="0" hint1="0" hint2="0" width="2929" height="6636" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-LoanAttributes]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="9" destid="11" sourceattachpoint="10" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="13429" y="25474" />
+              <point x="13429" y="23456" />
+              <point x="11200" y="23456" />
+              <point x="11200" y="19638" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="6026" top="19338" logicalid="52" controlid="26" masterid="0" hint1="0" hint2="0" width="3824" height="6636" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanOrigination-Geography]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="10" destid="11" sourceattachpoint="4" destattachpoint="3" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6425" y="25474" />
+              <point x="6425" y="23456" />
+              <point x="9550" y="23456" />
+              <point x="9550" y="19638" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8601" top="10731" logicalid="55" controlid="29" masterid="0" hint1="0" hint2="0" width="925" height="4407" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[LoanService-LoanOrigination]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="11" destid="2" sourceattachpoint="0" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9000" y="14638" />
+              <point x="9000" y="12835" />
+              <point x="9226" y="12835" />
+              <point x="9226" y="11031" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-6565</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1623</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-2379</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-115</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>75</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="54e4929d-ccac-4324-a9b1-b1897be769c1">
+      <ID>Credit</ID>
+      <Name>Credit</Name>
+      <DimensionID>Credit</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="63a01e4f-c2f2-4c6c-aacb-f45b5f21e716">
+          <AttributeID>Credit Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2b11eff4-e45c-4a8a-95ad-a78fefcc79e5">
+          <AttributeID>Credit Score</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="97ed6c5f-de03-494e-a54b-3f5254c5d6a7">
+          <AttributeID>Credit Category</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="1388323e-5934-4b6f-b516-8d176e098fb8">
+      <ID>Metropolitan Area</ID>
+      <Name>Metropolitan Area</Name>
+      <DimensionID>Metropolitan Area</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f54eba1d-b36f-4e5c-b1dc-351d588ad1f7">
+          <AttributeID>Metropolitan Area Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f485ceae-9123-4b84-a5c3-3746b7f7c5a5">
+          <AttributeID>MSA Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9894d4e8-f308-447d-b83c-70c9c321be09">
+          <AttributeID>Area Description</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cd549e2a-8238-4064-b03b-2c6774e36cfe">
+          <AttributeID>Division Indicator</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="15b6b031-b4a5-4f83-9f0d-339aeb73f8ab">
+      <ID>Geography</ID>
+      <Name>Geography</Name>
+      <DimensionID>Geography</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7aa817b0-bb1c-45a2-a8b0-57d194020054">
+          <AttributeID>Geography Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="10b17c14-c5a8-4696-9000-f14e12c5ccb4">
+          <AttributeID>Postal Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ac3ced7f-d197-4b57-bfe6-90ab0e7478cc">
+          <AttributeID>Place Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8fd77681-2725-4efc-8bdf-21053fd02956">
+          <AttributeID>State Abbreviation</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6f5c0753-fa60-4cf9-b64b-e786117bf233">
+          <AttributeID>County</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d438d031-529c-4f8b-be30-1c72ee5993af">
+          <AttributeID>Latitude</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="424f3991-c079-489d-b6b7-5384fb129b8b">
+          <AttributeID>Longitude</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="f7644111-9084-4fcc-9b03-1b140ba5c3d7">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="cb5a744e-0e56-477d-87da-35d1e1124270">
+      <ID>Property</ID>
+      <Name>Property</Name>
+      <DimensionID>Property</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a531e737-b452-4f41-8600-477373f1979b">
+          <AttributeID>Property Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2a645379-7162-4eb9-a33e-816a720cd19d">
+          <AttributeID>Property Type Desc</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7b91804b-e5a1-43b9-973d-cae91ca3c13e">
+      <ID>Loan Attributes</ID>
+      <Name>Loan Attributes</Name>
+      <DimensionID>Loan Attributes</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="17c2486f-75c2-4152-95fb-2ba191a402e9">
+          <AttributeID>Loan Attribute Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="538b4028-9612-4982-a770-0fcaebb262bb">
+          <AttributeID>First Time Home Buyer Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="da794f79-24f2-47c6-a2fb-820fc92b9365">
+          <AttributeID>Mortgage Insurance Percentage Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="04ef2026-07f5-4335-9b84-c20966ede31d">
+          <AttributeID>Occupancy Status Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7a771d42-df55-407d-9b71-f320f5d2aa14">
+          <AttributeID>Units</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7fb7cf15-7aec-455e-a6d7-f9e6eee68a3a">
+          <AttributeID>Channel Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a6ca1897-85f2-43f3-9f19-6418c51ba8de">
+          <AttributeID>PPM Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3a5478b4-9f42-46cf-98f3-b48aec45e252">
+          <AttributeID>Product Type Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9956387a-cfd0-4ac6-ab16-a66d0c81bd1e">
+          <AttributeID>Loan Purpose Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="676cae73-79af-41ad-8fe6-51b8d68bb93c">
+          <AttributeID>Original Loan Term</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8c28d346-0412-42c4-84fd-20ac84645511">
+          <AttributeID>Number Of Borrowers</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ae2503b3-bf94-405c-be30-c39bb466ef76">
+          <AttributeID>Super Conforming Desc</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="fe7bb795-ac7c-45d4-80de-4bb787a3a5ac">
+      <ID>First Payment Month</ID>
+      <Name>First Payment Month</Name>
+      <DimensionID>Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="cc6ca4a3-4efa-495c-878f-dea8e98d1951">
+          <AttributeID>Calendar Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9e7eecd1-a4fe-461b-8693-0c6e7e38cee3">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8ccf4af1-f354-4af8-877e-fde84d66b00d">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cc6dbf9a-ad5b-40ea-a690-01ef951ba33c">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2a0ac688-cdcd-4aa0-bd8e-2f313b5599e1">
+      <ID>Maturity Month</ID>
+      <Name>Maturity Month</Name>
+      <DimensionID>Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="285b4da4-6928-4475-84a1-05ffdd10dee1">
+          <AttributeID>Calendar Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2f3d2239-8186-4cb7-9577-0f539cfb8469">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="41d1e0ea-cc4e-4745-9dc6-266f34a1bcce">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="48877d04-2cfe-4104-9dcf-894f3b5e87b2">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="ee89fa05-a140-4ee2-b2ae-3ffe6ae304ad">
+      <ID>Seller Entity</ID>
+      <Name>Seller Entity</Name>
+      <DimensionID>External Entity</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d2bac369-66c2-4ae7-8a19-36b779ee86d4">
+          <AttributeID>External Entity Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="031ee209-5c48-4549-b25b-2ae852ec0e6b">
+          <AttributeID>Entity Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="3d32374d-feba-48a3-9f70-d71d04e9359c">
+      <ID>Servicer</ID>
+      <Name>Servicer</Name>
+      <DimensionID>External Entity</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="756eaf1f-56c1-484a-824a-5d56442412aa">
+          <AttributeID>External Entity Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ead86835-d114-4ace-8b8e-c6ec9330cd17">
+          <AttributeID>Entity Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="3fc7acfe-b242-408d-917e-1cdb103c038c">
+      <ID>Loan Service Status</ID>
+      <Name>Loan Service Status</Name>
+      <DimensionID>Loan Service Status</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="171dcbc2-a13c-49e2-971e-97a708bcddea">
+          <AttributeID>Loan Service Status Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ead57507-05d4-45eb-9d24-b069cf71b3b4">
+          <AttributeID>Delinquency Status Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="75639a31-aed1-437e-9a7f-250b0f5751e7">
+          <AttributeID>Repurchase Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c0b0cd51-867b-4211-9d10-f862296bc652">
+          <AttributeID>Modification Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="99a6f526-ef76-431f-a462-7be85f3713ef">
+          <AttributeID>Zero Balance Code Desc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7036ae77-bc15-4ed2-86a4-a49b7955c48c">
+          <AttributeID>Delinquent Loan</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="335c816c-c822-487e-84de-2e48fbee5c1e">
+      <ID>Reporting Month</ID>
+      <Name>Reporting Month</Name>
+      <DimensionID>Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="6df325e5-f96f-4e7b-950e-ecc08d484d53">
+          <AttributeID>Calendar Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5822f420-67bb-49fb-ac4f-6752bc4b89d0">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ddaf89fb-3eb7-4867-8da2-f50bfaaad1c8">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eb47d61e-af1a-4aef-925d-15bf1525166d">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c1dab1fd-972b-40a1-971a-cea28c81d6b3">
+      <ID>Zero Balance Effective Month</ID>
+      <Name>Zero Balance Effective Month</Name>
+      <DimensionID>Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="39acb475-3a35-4961-af66-a5157af2a759">
+          <AttributeID>Calendar Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="383de57c-9202-43e4-95cd-9254d6aeea6f">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="de65da9a-e62f-4c9f-913d-6792ccb4dc6a">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f953a5c2-90f6-4575-b623-7ca3ae761c57">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="35b3cef3-e5d2-43e2-824b-8b783e1f9244">
+      <ID>DDLPI</ID>
+      <Name>DDLPI</Name>
+      <DimensionID>Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e138564d-fa16-45c4-8285-71df4640a5f7">
+          <AttributeID>Calendar Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cf815206-f7f6-4f9f-9e51-bceb7c53313a">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="323ddcdc-8437-4300-89b4-317f0232c266">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="52c23d8f-5d6e-4a22-a2e9-5f9e26213572">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="24a7ab13-6a69-4c56-bd66-03b154b21fb4">
+      <ID>Loan Sequence Number</ID>
+      <Name>Loan Sequence Number</Name>
+      <DimensionID>Loan Sequence Number</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="836e0353-8b19-4cf5-9d11-e45defbd72d7">
+          <AttributeID>Loan Sequence Number</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="46ff99e6-859d-42d0-9b6d-4d2aa87c0c29">
+      <ID>Loan Origination</ID>
+      <Name>Loan Origination</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="c14da9a3-a4e1-4849-9fa1-4f4aeb76c70a">
+          <ID>Loan Origination Count</ID>
+          <Name>Total Loans</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="5222f0ac-cd9a-42f7-8e85-8a25f19df81e">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="81214b0b-2fa0-4cee-abfd-f76378f1b572">
+              <TableID>fact_LoanOrigination</TableID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ae97c23d-e136-4f3f-8114-47f0fa774b73">
+          <ID>Original CTLV</ID>
+          <Name>Original CTLV</Name>
+          <Source dwd:design-time-name="83c2afaa-acec-4af6-babb-38637621b5b4">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="eb978ee3-33e1-425d-8bbc-09c44882d4cb">
+              <TableID>fact_LoanOrigination</TableID>
+              <ColumnID>OriginalCTLV</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="75d8f8c3-2d21-4d14-8584-771a6cb3830e">
+          <ID>Original DTI Ratio</ID>
+          <Name>Original DTI Ratio</Name>
+          <Source dwd:design-time-name="e2d86e63-f9f1-4576-b088-a4890fb7c741">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9f64acaf-b4ee-4e5e-a6a1-37abfacdc598">
+              <TableID>fact_LoanOrigination</TableID>
+              <ColumnID>OriginalDTIRatio</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="172a4473-1ff2-4d0e-92da-175e7c348138">
+          <ID>Original UPB</ID>
+          <Name>Original UPB</Name>
+          <Source dwd:design-time-name="75288029-a6c1-40d8-83b3-5a4ef2fc01a5">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="23be0a30-44d3-42e8-883e-2bebc69610a7">
+              <TableID>fact_LoanOrigination</TableID>
+              <ColumnID>OriginalUPB</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="96989028-099b-46ab-a96c-4a786012a31c">
+          <ID>Original LTV</ID>
+          <Name>Original LTV</Name>
+          <Source dwd:design-time-name="78f8b1ef-4152-4c21-b801-f97cd4fc1868">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a83a1ee3-d891-47f7-bc61-d160ab57b5f1">
+              <TableID>fact_LoanOrigination</TableID>
+              <ColumnID>OriginalLTV</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c50574c4-4aef-4fb0-8b95-0221eb884595">
+          <ID>Interest Rate</ID>
+          <Name>Interest Rate</Name>
+          <Source dwd:design-time-name="b092cfaa-b994-43b5-bdb8-d630edeb00ef">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9b404cc7-866e-4455-b1aa-e96505e8ab22">
+              <TableID>fact_LoanOrigination</TableID>
+              <ColumnID>InterestRate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="87019eae-758a-465f-8538-d482fb9455ee">
+          <CubeDimensionID>Credit</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5bfba97a-f5c6-4082-b1bf-d33216c9f3df">
+              <AttributeID>Credit Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="447422ed-76a3-4149-ab3a-2dd24e392cfb">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4dbba64e-e321-4252-9032-53763515b951">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>CreditKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="acb39b27-8ef1-49e6-850d-79d49d15f9b9">
+          <CubeDimensionID>Metropolitan Area</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c0f4a939-0137-43d2-8679-8d6d5e2b43bb">
+              <AttributeID>Metropolitan Area Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3d497e5a-531a-4cad-a6bc-e5b467ed7c09">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a0058641-62e2-4f34-872d-732e23780028">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>MetropolitanAreaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="dcfbc648-4163-4029-982c-a27131b93cda">
+          <CubeDimensionID>Geography</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="8d2d4a0a-44b6-45bd-924a-d43e58590827">
+              <AttributeID>Geography Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1fb1323a-8dcb-416e-bd2e-b2aa14bacbb7">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="effd4844-37ad-4903-9981-5c4a7478cb06">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>GeographyKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="96ec6784-5b1e-40e9-a677-6dfef3b9dedc">
+          <CubeDimensionID>Property</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5b07267f-4928-47d1-bf70-688be34cb621">
+              <AttributeID>Property Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="221075dd-ea6c-447e-b4ae-261830492876">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fca8a029-1948-4f6b-a098-b544f2f3e1c5">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>PropertyKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4a6bb4b7-291a-4553-b9f0-9e1709d7e8da">
+          <CubeDimensionID>Loan Attributes</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="535d1075-4ae4-4a76-9b05-b6bf732a2ad3">
+              <AttributeID>Loan Attribute Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="74e62de0-cbf7-4fbf-b952-35a0dbf6ed86">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8d8e16f9-d3ea-4ebe-8c66-7f701c508963">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>LoanAttributesKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="088c76e2-d8b6-450f-852e-4ca6f8185ef2">
+          <CubeDimensionID>First Payment Month</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="fba36ce5-74c8-4df7-8556-0a2615591720">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c77b8d6a-3bd8-4cb1-8860-254aa578b900">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9871b053-ae78-46a7-8723-72184cf7e002">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>FirstPaymentMonthKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="21066428-dca0-497d-9df9-4cf9764e0c18">
+          <CubeDimensionID>Maturity Month</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="57e3c0b7-7b86-4e7c-8918-434323664698">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="afe00028-7532-4b61-b2f9-f8be1e1d2423">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8f881f7a-ba4e-4a25-9db4-4579fd9df585">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>MaturityMonthKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a3831336-50a6-47a7-a54a-70b618a9615c">
+          <CubeDimensionID>Seller Entity</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d9c592f5-fede-46b5-b059-23d137090029">
+              <AttributeID>External Entity Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="83599dee-e45f-48db-84a4-1e02c12c8c74">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ea05ce6b-4fb2-4d05-b7f1-d53329d1f821">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>SellerEntityKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7b6beb8a-cf9b-4fe9-addb-5d0e9d6ff0d7">
+          <CubeDimensionID>Servicer</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4be04b5e-d3cc-4f80-ade4-4c4ee7cdc5bc">
+              <AttributeID>External Entity Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="624d0291-f14e-4134-b112-110c3c355d90">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f0d6e3f4-6701-44c6-8f92-1ef685547e38">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>ServicerKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="5581d007-e3d5-4bf5-8deb-0ad39f68f811">
+          <CubeDimensionID>Loan Sequence Number</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="abae3458-6c29-41b1-bbd7-a8a73e439edb">
+              <AttributeID>Loan Sequence Number</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="fbdde09d-86a3-4c28-a457-f0f230f58fe5">
+                  <DataType>WChar</DataType>
+                  <DataSize>20</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="22f1c935-26d6-4258-814d-8f136b5045b4">
+                    <TableID>fact_LoanOrigination</TableID>
+                    <ColumnID>LoanSequenceNumber</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="fb024776-faf7-4318-b8f4-b3753c8c6f38">
+          <CubeDimensionID>Loan Service Status</CubeDimensionID>
+          <MeasureGroupID>Loan Service</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="e1d82642-5548-43fe-a3a5-1410931f5910">
+          <CubeDimensionID>Zero Balance Effective Month</CubeDimensionID>
+          <MeasureGroupID>Loan Service</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="a822a8fd-a34e-4700-aa7a-c71f570f8483">
+          <CubeDimensionID>Reporting Month</CubeDimensionID>
+          <MeasureGroupID>Loan Service</MeasureGroupID>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="695b8cf3-67c7-4c46-9036-b5f801d356fd">
+      <ID>Loan Service</ID>
+      <Name>Loan Service</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="c79f7774-f1f7-46e2-a2d5-049375fc0904">
+          <ID>Actual UPB</ID>
+          <Name>Actual UPB</Name>
+          <Source dwd:design-time-name="efed01d0-e7dc-4817-a36f-dcb031fe7a06">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ff9b8348-e9b8-4c4b-a576-90992b35f560">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>ActualUPB</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fe638734-8eda-48b4-9952-383804e72280">
+          <ID>Deferred UPB</ID>
+          <Name>Deferred UPB</Name>
+          <Source dwd:design-time-name="a3cbdf3f-4b9d-48ab-988e-e05f03272678">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b4c94cb0-f9ad-4a7d-ab63-9922e7a0ef21">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>DeferredUPB</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fcf03c07-832c-4a8f-ade8-d8ee04cf3c1a">
+          <ID>MI Recoveries</ID>
+          <Name>MI Recoveries</Name>
+          <Source dwd:design-time-name="18be5175-6f28-4c9c-bbad-e5780b980baf">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0c517c57-de92-476b-8c47-cfe6fda025a1">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>MIRecoveries</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="77227e64-78d1-45e8-b3dc-d695b4ddd166">
+          <ID>Net Sales Proceeds</ID>
+          <Name>Net Sales Proceeds</Name>
+          <Source dwd:design-time-name="8e41b913-fa52-44da-ae4e-4f2468ed6bef">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="41ffe00d-65ad-4bf6-afa6-0737eb60bbda">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>NetSalesProceeds</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="37e67979-9dd0-4741-b95a-bb8910cf5403">
+          <ID>Non MI Recoveries</ID>
+          <Name>Non MI Recoveries</Name>
+          <Source dwd:design-time-name="ab02a0ab-a5fa-425d-b938-c2306ce1fe96">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ff894383-0ce8-4f7a-a2ff-9e6724b3c02e">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>NonMIRecoveries</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="eedf0880-3ba2-4f39-b3d6-6f9873051511">
+          <ID>Expenses</ID>
+          <Name>Expenses</Name>
+          <Source dwd:design-time-name="9582c593-9f5a-4bb6-9984-9f70192be8af">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6c27fe0b-691c-498b-935c-120ae2eb8bb6">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>Expenses</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d8b00381-9923-4b05-8c7c-716dde93ebc4">
+          <ID>Legal Costs</ID>
+          <Name>Legal Costs</Name>
+          <Source dwd:design-time-name="eb8ffc8b-5fd2-4d8c-8738-ae7b3ccce9e6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8ea7c2cf-fd75-4d11-aeac-64a314e52c41">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>LegalCosts</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="45c334c4-f95f-4c99-80b0-d14756225b30">
+          <ID>Maintenance Costs</ID>
+          <Name>Maintenance Costs</Name>
+          <Source dwd:design-time-name="5d29d101-e17d-421d-9426-c318def8e02f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="14211044-07da-4cd5-9e2d-9d8840a84768">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>MaintenanceCosts</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="20f4e2e2-535b-4b95-be04-bda20467ef58">
+          <ID>Taxes Insurance</ID>
+          <Name>Taxes Insurance</Name>
+          <Source dwd:design-time-name="db68056f-57ee-4bbc-8102-4bd07ea67097">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ca8374b4-5860-4b91-960e-ba2aaec7325f">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>TaxesInsurance</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2417c55d-d719-41e6-8c3b-f4cba9ff326a">
+          <ID>Misc Expenses</ID>
+          <Name>Misc Expenses</Name>
+          <Source dwd:design-time-name="bb2d125c-2fac-4d69-9842-b25bf4dbaca2">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ee8569cb-42d5-4e3e-b68f-1b180506cc12">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>MiscExpenses</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="803483a0-8e86-4bc6-9bdb-1afbd07fb3b0">
+          <ID>Actual Cost</ID>
+          <Name>Actual Cost</Name>
+          <Source dwd:design-time-name="999818b5-f6fb-4e63-8713-db6b8a127ff8">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0dc52693-14ca-4bd8-9cbe-706852583dd3">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>ActualCost</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="602dff84-fb20-4251-9ac8-f6ebc6270c2e">
+          <ID>Modification Cost</ID>
+          <Name>Modification Cost</Name>
+          <Source dwd:design-time-name="87fac122-9f10-4077-a569-9b392aa9d714">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="378f894d-fa59-451a-aee6-22543e41d621">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>ModificationCost</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c8f9c1dc-0821-4f95-8632-51731cc3f36b">
+          <ID>Monthly Payment</ID>
+          <Name>Monthly Payment</Name>
+          <Source dwd:design-time-name="26cef73a-dd8a-42ed-ae4f-e4ff98052880">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ffdfc228-8ac9-426b-a99f-5ad95c7347bf">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>MonthlyPayment</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5a0b4eb1-f8db-4e35-8889-9d38ef92cca3">
+          <ID>Loan Service Count</ID>
+          <Name>Loan Service Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="49f06db2-a6ba-420c-a877-b3d45113c8a7">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="14317e19-b421-44ad-8048-6a033c89da4f">
+              <TableID>fact_LoanService</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ef2636b6-0a9b-462d-8d99-8b6a08cfc558">
+          <CubeDimensionID>Loan Service Status</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="82c5fff2-a4c7-4094-90c2-b63f7599abc3">
+              <AttributeID>Loan Service Status Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="bcce2a99-8026-409d-9f2b-9c870d3ba083">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8f0a7517-dbb9-47b0-912f-9312b1bbcee9">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>LoanServiceStatusKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9d0846f1-d34a-4a1e-ba13-2e6930500716">
+          <CubeDimensionID>Reporting Month</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="fa8cc9b1-7bfa-4cdf-99d9-21dfde409986">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b5f2c9f0-2500-4864-b1c1-bb5d7ea0e779">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b71e4f47-8881-4a61-b953-daa93398d4a8">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>ReportingMonthKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="19091f0d-1850-4b40-ab1f-15a8c88923d0">
+          <CubeDimensionID>Zero Balance Effective Month</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="11e8fd80-1530-4365-867b-81d6673ea5b0">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ce83640c-0a15-4644-a065-595abff95ac7">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8dd28f08-6dec-43db-bb2a-16f9da688d54">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>ZeroBalanceEffectiveMonth</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0d6af52f-4527-41d7-8b38-b866f053d59c">
+          <CubeDimensionID>DDLPI</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1d77e046-7da6-4799-9e34-a73fc6243c59">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="96d98d87-699d-42cd-9253-eb4287f6add9">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6c80b0e4-627b-4a19-b154-9ed595df2627">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>DDLPIKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="029048aa-d81d-443b-9aa0-1ad5eb3bc561">
+          <CubeDimensionID>Credit</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="624d94a9-429c-4266-a95b-685a9e83d8bc">
+          <CubeDimensionID>Loan Sequence Number</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="eeddbf82-5055-4146-8724-c75035540f0f">
+              <AttributeID>Loan Sequence Number</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="afdb87c8-4c3e-4d2f-b2e8-e90550bd78f5">
+                  <DataType>WChar</DataType>
+                  <DataSize>20</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6e9c5be0-515a-4a05-aca2-89e29db9c031">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>LoanSequenceNumber</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="20725bf1-0be9-4829-b6c5-036ddbb343a6">
+          <CubeDimensionID>Metropolitan Area</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="94014d66-9f8f-426a-b398-4fc2ab513891">
+          <CubeDimensionID>Geography</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="a7e78b07-e509-4e20-b66e-d7da5c8334d3">
+          <CubeDimensionID>Property</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="97950805-1d03-4698-b870-91cb86bfe7cc">
+          <CubeDimensionID>Loan Attributes</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="379c3fd8-6711-47b2-9faa-50268b2a540b">
+          <CubeDimensionID>Seller Entity</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="b31a8e70-7551-47d6-a6fc-173abee8224f">
+          <CubeDimensionID>Servicer</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="d8a22732-3ab3-4be2-8558-eddf9a614f96">
+      <ID>Loan Service 1</ID>
+      <Name>Distinct Loans</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="be891e60-ebbd-4066-b540-3d64d4db182b">
+          <ID>Loan Sequence Number Distinct Count</ID>
+          <Name>Distinct Loan Count</Name>
+          <AggregateFunction>DistinctCount</AggregateFunction>
+          <DataType>Integer</DataType>
+          <Source dwd:design-time-name="211bb62e-7122-43e0-aaf1-414538137390">
+            <DataType>WChar</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c71764d7-be87-433d-a875-8576ea431a8f">
+              <TableID>fact_LoanService</TableID>
+              <ColumnID>LoanSequenceNumber</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fc8da4f5-e8aa-41f9-8ebe-4a7c149e3fe0">
+          <CubeDimensionID>Loan Service Status</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="20ffcbe7-6cb1-40e0-bf68-4ae20b9506fd">
+              <AttributeID>Loan Service Status Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="bdaede4a-3cb4-49f6-b45d-89a59565c72c">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5b38fcd2-6af9-416b-82a0-849fab5e23ff">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>LoanServiceStatusKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="af3019a3-a000-40e4-be68-34962dfa7beb">
+          <CubeDimensionID>Reporting Month</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e8606d6f-9c50-4e9a-b16a-063e0ac76f75">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="dddf48f7-5d80-4b2f-b33c-a3b46bd771d9">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d4fbe265-9ee3-4fed-8c96-ab5b920846ac">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>ReportingMonthKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d50f7d59-7001-4449-a2de-52beff87e26b">
+          <CubeDimensionID>Zero Balance Effective Month</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ee39eaf7-e97c-4246-82c1-f85fc9cc8efb">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6e1da426-2adf-4e06-9cdb-f07bc3ee506e">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c496d198-c325-47d4-ae7f-193d4c714a98">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>ZeroBalanceEffectiveMonth</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d5ffee09-539e-4f7a-9de3-92f695850fcb">
+          <CubeDimensionID>DDLPI</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c3b2eb0b-ffb7-4a49-a116-5ccf4117d9b0">
+              <AttributeID>Calendar Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b359298a-df40-47fd-9242-d594b59bcb7e">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0d91a14f-f170-4814-908b-1335d5972217">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>DDLPIKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="dbb80cd1-d49c-47dc-bf37-f97bf28afcde">
+          <CubeDimensionID>Credit</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3721b735-b646-4897-824f-d0df859ffb0c">
+          <CubeDimensionID>Loan Sequence Number</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0f945a9d-7cb5-4428-8668-d586fe2f49c2">
+              <AttributeID>Loan Sequence Number</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="02215976-cefa-4140-a9eb-c8c572f7d63e">
+                  <DataType>WChar</DataType>
+                  <DataSize>20</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bb89ab75-3ed4-4436-89a9-3bd75e094b08">
+                    <TableID>fact_LoanService</TableID>
+                    <ColumnID>LoanSequenceNumber</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="04e05345-b4b3-4d45-95f0-b47ac080f8a8">
+          <CubeDimensionID>Metropolitan Area</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="fe940661-04b7-467c-a18c-49551707e989">
+          <CubeDimensionID>Geography</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="640c4f36-4ff2-416a-85be-c15374d08f7d">
+          <CubeDimensionID>Property</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="e1040e71-0bbf-4d94-b3d9-a19771bf43b7">
+          <CubeDimensionID>Loan Attributes</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="dcd40501-8405-4e05-943c-434e08a3f699">
+          <CubeDimensionID>Seller Entity</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="4aaa0bce-69f1-414d-8f03-b6f587dc930b">
+          <CubeDimensionID>Servicer</CubeDimensionID>
+          <MeasureGroupID>Loan Origination</MeasureGroupID>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="1dbef35f-5c58-4354-8098-74e606fc8620">
+    <DataSourceViewID>Freddie</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="8a873fa2-c191-413d-b316-34fe461a993d">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE;    
+CREATE MEMBER CURRENTCUBE.[Measures].[Total Loan Defaults]
+ AS SUM({[Loan Service Status].[Delinquent Loan].[Delinquent]}, [Measures].[Total Loans]), 
+FORMAT_STRING = "Standard", 
+NON_EMPTY_BEHAVIOR = { [Total Loans] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Distinct Loans'; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Total Loan Payoffs]
+ AS SUM({[Loan Service Status].[Zero Balance Code Desc].&amp;[Prepaid or Matured (Voluntary Payoff)]}, [Measures].[Distinct Loan Count]), 
+FORMAT_STRING = "Standard", 
+NON_EMPTY_BEHAVIOR = { [Distinct Loan Count] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Distinct Loans'  ; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

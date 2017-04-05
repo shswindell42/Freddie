@@ -1,0 +1,328 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="638ac750-3bb7-4970-8d01-e6c7fc982d1e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Loan Results NN</ID>
+  <Name>Loan Results NN</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_LoanResults</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-14903" scrolltop="-7964" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="33814" y="20452" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanResults" left="-1779" top="-1984" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4445" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00005d11000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_LoanResults" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-14903</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-7964</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-1779</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-1984</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="83c63ef3-9b70-4575-928e-23d8ef174f0a">
+    <DataSourceViewID>LoanResults</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4f6b56c2-5f6f-47f2-a90a-3442e553aa24">
+      <ID>Delinquency Status Desc</ID>
+      <Name>Delinquency Status Desc</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="77628832-0238-43a6-840a-50c800ab2e94">
+          <DataType>WChar</DataType>
+          <DataSize>41</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9206401a-57f8-40ca-9fba-d6fb1a49bc85">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>DelinquencyStatusDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="67757667-5f7a-4691-a796-aeb85ba78f50">
+      <ID>Interest Rate</ID>
+      <Name>Interest Rate</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a1adecf-0b03-479a-88cd-24d6c5b6d33d">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fd7bb219-72cf-4fd1-9072-9dff507433d8">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>InterestRate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ff238e1d-3bcb-433e-8c65-efb7c10de71b">
+      <ID>Credit Category</ID>
+      <Name>Credit Category</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d60e27fe-e02e-430b-bff2-70a3b90805aa">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="34418851-f28e-481a-8b06-5935617aa765">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>CreditCategory</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0590eb46-2bb7-4b03-8215-4787a32bd852">
+      <ID>First Time Home Buyer Desc</ID>
+      <Name>First Time Home Buyer Desc</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="01baa26b-64c6-42b4-a493-44956f5177bc">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cf8b490a-6c02-4b45-b4d6-a342495c9873">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>FirstTimeHomeBuyerDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a70455f5-ed53-4b9b-b674-312b121f5ee5">
+      <ID>Loan Sequence Number</ID>
+      <Name>Loan Sequence Number</Name>
+      <IsKey>true</IsKey>
+      <Type>Text</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="590bc64b-20ab-40c2-9d43-7d5bc4f63b46">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e8e182a1-adfb-483a-a694-be36d5809958">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>LoanSequenceNumber</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b33ca0da-4d9b-4f59-b67e-89726ad363b6">
+      <ID>Number Of Borrowers</ID>
+      <Name>Number Of Borrowers</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="06066a1f-bd76-4e71-9437-0678d43c1696">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0db11ba5-9e5b-4506-9cb6-8f924a73cfd2">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>NumberOfBorrowers</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="755dab6c-c11b-4bb6-989b-08ccdc6cc921">
+      <ID>Original CTLV</ID>
+      <Name>Original CTLV</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4cb5c90a-998a-4f09-b39d-9ef07022481f">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a6ffabdd-7dce-4d2a-b876-eb8d072fd1f8">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>OriginalCTLV</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="13760af2-c291-40ef-9def-929c92ad3572">
+      <ID>Original DTI Ratio</ID>
+      <Name>Original DTI Ratio</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="22713081-ea36-4398-8a4a-bedf78952004">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4dae71bd-5e07-4301-ad7f-d235cf5caab2">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>OriginalDTIRatio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ee440846-80fd-48eb-b06f-967f4fd26b30">
+      <ID>Original Loan Term</ID>
+      <Name>Original Loan Term</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1aaf3994-966d-4be6-a2c2-9a5991434551">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e08242f2-5828-49e0-8b4c-25e8d1092c7a">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>OriginalLoanTerm</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b8523c50-c270-4d9f-8cfb-6b7b9d7ce52b">
+      <ID>Units</ID>
+      <Name>Units</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8183c83a-bc40-4be8-a9d0-969ce19f449d">
+          <DataType>SmallInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="32cbd5d2-d7b7-4139-b486-0e6f00520e24">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>Units</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f9e2d014-e874-45e6-9576-d4eb3da5f829">
+      <ID>Zero Balance Code Desc</ID>
+      <Name>Zero Balance Code Desc</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b155d552-6ca8-4a71-a0e4-f20ede2b03dd">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d5f2929e-5ef4-4ef0-84c1-22d433867d8c">
+            <TableID>dbo_LoanResults</TableID>
+            <ColumnID>ZeroBalanceCodeDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="4fa5c8bf-5064-4f72-b6ae-facfb2403f89">
+      <ID>Loan Results NN</ID>
+      <Name>Loan Results NN</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Neural_Network</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="48668541-6e57-403b-bfb6-46e555b5244c">
+          <ID>Credit Category</ID>
+          <Name>Credit Category</Name>
+          <SourceColumnID>Credit Category</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="af621d68-aabb-4d15-ace2-a0aaf49a9003">
+          <ID>First Time Home Buyer Desc</ID>
+          <Name>First Time Home Buyer Desc</Name>
+          <SourceColumnID>First Time Home Buyer Desc</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="c8ce8609-ff0b-4708-8875-13e219d9ad29">
+          <ID>Loan Sequence Number</ID>
+          <Name>Loan Sequence Number</Name>
+          <SourceColumnID>Loan Sequence Number</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="fb1b7488-8888-4be1-86d0-398f7bda8d58">
+          <ID>Number Of Borrowers</ID>
+          <Name>Number Of Borrowers</Name>
+          <SourceColumnID>Number Of Borrowers</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3a8357b7-c882-418b-b167-32963ac3f131">
+          <ID>Original CTLV</ID>
+          <Name>Original CTLV</Name>
+          <SourceColumnID>Original CTLV</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="d23acdce-5523-4e4f-9950-f577dc5df68b">
+          <ID>Original DTI Ratio</ID>
+          <Name>Original DTI Ratio</Name>
+          <SourceColumnID>Original DTI Ratio</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="8cdea50d-4062-42ea-81aa-2f3dcc2edf4e">
+          <ID>Original Loan Term</ID>
+          <Name>Original Loan Term</Name>
+          <SourceColumnID>Original Loan Term</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="59b71a6c-b779-4a94-b59a-0a81ab8af872">
+          <ID>Units</ID>
+          <Name>Units</Name>
+          <SourceColumnID>Units</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="cb9b4f0e-3f85-4733-b733-2ccb0b07b8d5">
+          <ID>Zero Balance Code Desc</ID>
+          <Name>Zero Balance Code Desc</Name>
+          <SourceColumnID>Zero Balance Code Desc</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="ae675c4d-f459-4575-a232-bf59e47b371a">
+          <ID>Interest Rate</ID>
+          <Name>Interest Rate</Name>
+          <SourceColumnID>Interest Rate</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b981b212-e87d-4a33-8400-4fa9f36c7400">
+          <ID>Delinquency Status Desc</ID>
+          <Name>Delinquency Status Desc</Name>
+          <SourceColumnID>Delinquency Status Desc</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

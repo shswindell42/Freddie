@@ -1,0 +1,142 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1704163d-c687-4025-aef7-2101da55c90d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>LoanResults</ID>
+  <Name>LoanResults</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-15485" scrolltop="-8678" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="35454" y="22357" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanResults" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4445" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000c00005d11000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_LoanResults" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-15485</DiagramViewPortLeft>
+            <DiagramViewPortTop>-8678</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Freddie</DataSourceID>
+  <Schema>
+    <xs:schema id="LoanResults" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="LoanResults" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="b55172dd-f07f-4975-a23e-a0bbf0445bd5">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_LoanResults" msprop:design-time-name="ef038941-6855-48ea-8578-ea5acb11abc7" msprop:FriendlyName="LoanResults" msprop:DbSchemaName="dbo" msprop:DbTableName="LoanResults" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="LoanSequenceNumber" msprop:design-time-name="bdf97426-8895-482b-bb18-3a87a1854dbe" msprop:DbColumnName="LoanSequenceNumber" msprop:FriendlyName="LoanSequenceNumber">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CreditCategory" msprop:design-time-name="945eb051-e8c4-47ad-b1a2-ca665d98a944" msprop:DbColumnName="CreditCategory" msprop:FriendlyName="CreditCategory">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FirstTimeHomeBuyerDesc" msprop:design-time-name="afe56c38-e18b-4d1c-aa42-4312e900f5bd" msprop:DbColumnName="FirstTimeHomeBuyerDesc" msprop:FriendlyName="FirstTimeHomeBuyerDesc" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="OriginalLoanTerm" msprop:design-time-name="e020c446-482a-4f0a-8a8f-eb86bece3973" msprop:DbColumnName="OriginalLoanTerm" msprop:FriendlyName="OriginalLoanTerm" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NumberOfBorrowers" msprop:design-time-name="a53291e1-5cf1-47ab-b936-f00a73e65a30" msprop:DbColumnName="NumberOfBorrowers" msprop:FriendlyName="NumberOfBorrowers" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Units" msprop:design-time-name="9ef1bb1e-7e04-460d-bb81-66f27ecd1aa0" msprop:DbColumnName="Units" msprop:FriendlyName="Units" type="xs:short" minOccurs="0" />
+                  <xs:element name="OriginalCTLV" msprop:design-time-name="36195b81-7b57-4b18-9e4a-8c5e4d656ba9" msprop:DbColumnName="OriginalCTLV" msprop:FriendlyName="OriginalCTLV" type="xs:int" minOccurs="0" />
+                  <xs:element name="OriginalDTIRatio" msprop:design-time-name="708d7264-0ac5-4452-b965-c629d85857b2" msprop:DbColumnName="OriginalDTIRatio" msprop:FriendlyName="OriginalDTIRatio" type="xs:int" minOccurs="0" />
+                  <xs:element name="DelinquencyStatusDesc" msprop:design-time-name="3714e08a-8894-4c19-8348-e7e98ada9cea" msprop:DbColumnName="DelinquencyStatusDesc" msprop:FriendlyName="DelinquencyStatusDesc">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="41" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ZeroBalanceCodeDesc" msprop:design-time-name="cdf78b81-89cc-48f0-acfa-0b81b309e5e9" msprop:DbColumnName="ZeroBalanceCodeDesc" msprop:FriendlyName="ZeroBalanceCodeDesc">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InterestRate" msprop:DbColumnName="InterestRate" msprop:design-time-name="b33b6c9b-f69b-4690-a954-8a5a0089679b" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <LoanResults xmlns="" />
+  </Schema>
+</DataSourceView>

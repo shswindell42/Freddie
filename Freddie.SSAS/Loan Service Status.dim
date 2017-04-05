@@ -1,0 +1,205 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="242f0631-6336-4931-a100-2aa793fc577e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Loan Service Status</ID>
+  <Name>Loan Service Status</Name>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2534" scrolltop="-8017" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12012" y="21034" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanServiceStatus" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4233" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00008910000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dim_LoanServiceStatus" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2534</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-8017</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7516dcec-225d-4e62-a13c-d9e9f144769a">
+    <DataSourceViewID>Freddie</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="5758701f-7b61-42c3-bb67-a42a90588463">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="407ba130-ddf4-4a54-9459-a340832b8473">
+      <ID>Loan Service Status Key</ID>
+      <Name>Loan Service Status Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b28e7025-ef74-4038-8cc8-32eb003307ee">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c5dc390a-d03c-47df-a16c-9e97bf92b9f1">
+            <TableID>dim_LoanServiceStatus</TableID>
+            <ColumnID>LoanServiceStatusKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="4bf4c4b9-b164-44e4-89e1-3d3e1c88bba7">
+          <AttributeID>Delinquency Status Desc</AttributeID>
+          <Name>Delinquency Status Desc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ded4dcb4-f16f-4866-aba3-290b8dbe6371">
+          <AttributeID>Repurchase Desc</AttributeID>
+          <Name>Repurchase Desc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2f1399d7-fbc1-43a1-882a-cf09a62771bc">
+          <AttributeID>Modification Desc</AttributeID>
+          <Name>Modification Desc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="eb8090da-1081-4ff6-b05b-ac179f2edd1c">
+          <AttributeID>Zero Balance Code Desc</AttributeID>
+          <Name>Zero Balance Code Desc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="94b4aee6-ced9-4dfd-8c84-c65286a13673">
+          <AttributeID>Delinquent Loan</AttributeID>
+          <Name>Delinquent Loan</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="77380b57-272e-484d-b7e4-e167896af147">
+      <ID>Delinquency Status Desc</ID>
+      <Name>Delinquency Status Desc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0d4bcc37-28b5-4441-8983-0e45497a56e8">
+          <DataType>WChar</DataType>
+          <DataSize>41</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fbc06d27-32b1-4df1-98d9-beb76d97d3e4">
+            <TableID>dim_LoanServiceStatus</TableID>
+            <ColumnID>DelinquencyStatusDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="68f094b1-47b7-4bc2-8b60-7359e5b7c2cb">
+      <ID>Repurchase Desc</ID>
+      <Name>Repurchase Desc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0d18f35d-fda5-43d3-adaa-4034aeb82820">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e59a9b92-836b-4a8b-a21e-f15e2e481fa4">
+            <TableID>dim_LoanServiceStatus</TableID>
+            <ColumnID>RepurchaseDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="15f1f0dc-c7a3-4d46-b96f-3992a6cc546b">
+      <ID>Modification Desc</ID>
+      <Name>Modification Desc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e99044a2-58f3-427d-a5b4-8306ed4020cb">
+          <DataType>WChar</DataType>
+          <DataSize>12</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8d01c79-9fea-40e3-9c91-824a0039cf4c">
+            <TableID>dim_LoanServiceStatus</TableID>
+            <ColumnID>ModificationDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4e21a849-bd52-488b-8db6-10dbf7bbbfec">
+      <ID>Zero Balance Code Desc</ID>
+      <Name>Zero Balance Code Desc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="708f4a1b-7b3e-45f5-afdc-9fd60ea6c7e4">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="564f6c2c-fb3e-41a6-a53c-ebb4c9d1376c">
+            <TableID>dim_LoanServiceStatus</TableID>
+            <ColumnID>ZeroBalanceCodeDesc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="03d4297b-738c-430b-aa0f-2cc557946e87">
+      <ID>Delinquent Loan</ID>
+      <Name>Delinquent Loan</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9a4d21d6-bd5e-40ff-b919-a27dd5d97016">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ea0ea78-79dd-43dc-9f33-2f3dea8c123a">
+            <TableID>dim_LoanServiceStatus</TableID>
+            <ColumnID>DelinquentLoan</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
