@@ -16,6 +16,9 @@ SELECT DISTINCT DelinquencyStatus
 												 ' days delinquent'),
 											'Unknown')
 							END
+	,DelinquentLoan = CASE WHEN ZeroBalanceCode IN ('03', '09') THEN 'Delinquent'
+						ELSE 'Not Delinquent'
+					END
 	,RepurchaseFlag
 	,RepurchaseDesc = CASE RepurchaseFlag 
 							WHEN 'N' THEN 'Not Repurchased'
@@ -38,4 +41,6 @@ SELECT DISTINCT DelinquencyStatus
 							WHEN '  ' THEN 'Not Applicable'
 							ELSE 'Unknown'
 						END
+	,PayoffLoan = CASE WHEN ZeroBalanceCode IN ('01', '06') THEN 'Paid Off'
+					ELSE 'Not Paid Off' END
 FROM stage.LoanService
