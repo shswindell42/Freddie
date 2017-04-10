@@ -1,12 +1,12 @@
 ﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1ed61d3f-0e0f-49ff-a65b-be5a64044300" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>InterestRate LR</ID>
   <Name>InterestRate LR</Name>
-  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
   <Annotations>
     <Annotation>
       <Name>MDXFilterComponent</Name>
-      <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"&gt;&lt;FilterItem&gt;&lt;HierarchyUniqueName&gt;[First Payment Month].[Quarter]&lt;/HierarchyUniqueName&gt;&lt;Condition xsi:type="EqualTo"&gt;&lt;Members&gt;&lt;Member&gt;&lt;MemberUniqueName&gt;[First Payment Month].[Quarter].&amp;amp;[2008 Q1]&lt;/MemberUniqueName&gt;&lt;/Member&gt;&lt;/Members&gt;&lt;/Condition&gt;&lt;/FilterItem&gt;&lt;/FilterItems&gt;&lt;/Filter&gt;</Value>
+      <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"&gt;&lt;FilterItem&gt;&lt;HierarchyUniqueName&gt;[First Payment Month].[Year]&lt;/HierarchyUniqueName&gt;&lt;Condition xsi:type="EqualTo"&gt;&lt;Members&gt;&lt;Member&gt;&lt;MemberUniqueName&gt;[First Payment Month].[Year].&amp;amp;[2008]&lt;/MemberUniqueName&gt;&lt;/Member&gt;&lt;/Members&gt;&lt;/Condition&gt;&lt;/FilterItem&gt;&lt;/FilterItems&gt;&lt;/Filter&gt;</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -44,15 +44,59 @@
       <Value>100</Value>
     </Annotation>
   </Annotations>
-  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Source xsi:type="CubeDimensionBinding" dwd:design-time-name="37e24766-5b19-4502-a844-5acc7ee672a1">
     <DataSourceID>.</DataSourceID>
     <CubeID>Freddie</CubeID>
     <CubeDimensionID>Loan Sequence Number</CubeDimensionID>
-    <Filter>( SELECT ( { [First Payment Month].[Quarter].&amp;[2008 Q1] } ) ON COLUMNS FROM [Freddie])</Filter>
+    <Filter>( SELECT ( { [First Payment Month].[Year].&amp;[2008] } ) ON COLUMNS FROM [Freddie])</Filter>
   </Source>
   <Columns>
+    <Column xsi:type="TableMiningStructureColumn" dwd:design-time-name="22949801-46f7-4497-8c38-ff9ee57a1c7b">
+      <Annotations>
+        <Annotation>
+          <Name>MDXFilterComponent</Name>
+          <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"&gt;&lt;FilterItem&gt;&lt;HierarchyUniqueName&gt;[First Payment Month].[Year]&lt;/HierarchyUniqueName&gt;&lt;Condition xsi:type="EqualTo"&gt;&lt;Members&gt;&lt;Member&gt;&lt;MemberUniqueName&gt;[First Payment Month].[Year].&amp;amp;[2008]&lt;/MemberUniqueName&gt;&lt;/Member&gt;&lt;/Members&gt;&lt;/Condition&gt;&lt;/FilterItem&gt;&lt;/FilterItems&gt;&lt;/Filter&gt;</Value>
+        </Annotation>
+      </Annotations>
+      <ID>Loan Origination</ID>
+      <Name>Loan Origination</Name>
+      <SourceMeasureGroup dwd:design-time-name="918bd5d4-bda6-46fe-b379-ec8255879a2b">
+        <DataSourceID>.</DataSourceID>
+        <CubeID>Freddie</CubeID>
+        <MeasureGroupID>Loan Origination</MeasureGroupID>
+        <RefreshInterval>PT1S</RefreshInterval>
+        <Filter>( SELECT ( { [First Payment Month].[Year].&amp;[2008] } ) ON COLUMNS FROM [Freddie])</Filter>
+      </SourceMeasureGroup>
+      <Columns>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="cd6e74ac-d8a1-4e76-ba36-f7f799b89c12">
+          <ID>Credit Score</ID>
+          <Name>Credit Score</Name>
+          <Type>Long</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="ec24d9d7-d8a6-4f50-ae5b-5266fd4db06c">
+            <CubeID>Freddie</CubeID>
+            <CubeDimensionID>Credit</CubeDimensionID>
+            <AttributeID>Credit Score</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Continuous</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="2efcf008-90ee-4ee3-bcfa-67adf8fab411">
+          <ID>Credit Key</ID>
+          <Name>Credit Key</Name>
+          <IsKey>true</IsKey>
+          <Type>Long</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="ef960735-97c6-4f5c-8215-27252d1598ad">
+            <CubeID>Freddie</CubeID>
+            <CubeDimensionID>Credit</CubeDimensionID>
+            <AttributeID>Credit Key</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Key</Content>
+        </Column>
+      </Columns>
+    </Column>
     <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ab66c5ec-dda2-4155-926d-39040f9e7b3e">
       <ID>Loan Sequence Number</ID>
       <Name>Loan Sequence Number</Name>
@@ -93,15 +137,6 @@
       </Source>
       <Content>Continuous</Content>
     </Column>
-    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6e5e70b1-0354-4ac6-9db5-209991c016a6">
-      <ID>Original LTV</ID>
-      <Name>Original LTV</Name>
-      <Type>Long</Type>
-      <Source xsi:type="MeasureBinding" dwd:design-time-name="26527be8-aca1-4183-8dcd-2a8f1292a280">
-        <MeasureID>Original LTV</MeasureID>
-      </Source>
-      <Content>Continuous</Content>
-    </Column>
     <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="82158db6-3922-45ee-b700-37db8202e3c8">
       <ID>Original UPB</ID>
       <Name>Original UPB</Name>
@@ -111,58 +146,14 @@
       </Source>
       <Content>Continuous</Content>
     </Column>
-    <Column xsi:type="TableMiningStructureColumn" dwd:design-time-name="9962f1bd-2ac5-4d03-bd6a-0c63e8b9505c">
-      <Annotations>
-        <Annotation>
-          <Name>MDXFilterComponent</Name>
-          <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"&gt;&lt;FilterItem&gt;&lt;HierarchyUniqueName&gt;[First Payment Month].[Quarter]&lt;/HierarchyUniqueName&gt;&lt;Condition xsi:type="EqualTo"&gt;&lt;Members&gt;&lt;Member&gt;&lt;MemberUniqueName&gt;[First Payment Month].[Quarter].&amp;amp;[2008 Q1]&lt;/MemberUniqueName&gt;&lt;/Member&gt;&lt;/Members&gt;&lt;/Condition&gt;&lt;/FilterItem&gt;&lt;/FilterItems&gt;&lt;/Filter&gt;</Value>
-        </Annotation>
-      </Annotations>
-      <ID>Credit</ID>
-      <Name>Credit</Name>
-      <SourceMeasureGroup dwd:design-time-name="7e7a5ffc-81b5-4435-8ca1-1863edefa696">
-        <DataSourceID>.</DataSourceID>
-        <CubeID>Freddie</CubeID>
-        <MeasureGroupID>Loan Origination</MeasureGroupID>
-        <RefreshInterval>PT1S</RefreshInterval>
-        <Filter>( SELECT ( { [First Payment Month].[Quarter].&amp;[2008 Q1] } ) ON COLUMNS FROM [Freddie])</Filter>
-      </SourceMeasureGroup>
-      <Columns>
-        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0a4e37c7-1750-4f7c-9764-974038becff1">
-          <ID>Credit Key</ID>
-          <Name>Credit Key</Name>
-          <IsKey>true</IsKey>
-          <Type>Long</Type>
-          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="74ef7948-23fa-4a7c-8bc6-e3e7cea3bef2">
-            <CubeID>Freddie</CubeID>
-            <CubeDimensionID>Credit</CubeDimensionID>
-            <AttributeID>Credit Key</AttributeID>
-            <Type>All</Type>
-          </Source>
-          <Content>Key</Content>
-        </Column>
-        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="04a8a3ce-bd3b-4457-b982-64172a5eea60">
-          <ID>Credit Score</ID>
-          <Name>Credit Score</Name>
-          <Type>Long</Type>
-          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="f0afb926-b9b5-49dc-9eb9-abd6c463420e">
-            <CubeID>Freddie</CubeID>
-            <CubeDimensionID>Credit</CubeDimensionID>
-            <AttributeID>Credit Score</AttributeID>
-            <Type>All</Type>
-          </Source>
-          <Content>Continuous</Content>
-        </Column>
-      </Columns>
-    </Column>
   </Columns>
   <MiningModels>
     <MiningModel dwd:design-time-name="df686ece-c6bf-485a-9696-35d944fe92dc">
       <ID>InterestRate LR</ID>
       <Name>InterestRate LR</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Algorithm>Microsoft_Linear_Regression</Algorithm>
       <Columns>
@@ -197,14 +188,6 @@
             <ModelingFlag>REGRESSOR</ModelingFlag>
           </ModelingFlags>
         </Column>
-        <Column dwd:design-time-name="0c1905c3-82f3-46e1-bfd9-489508485ac2">
-          <ID>Original LTV</ID>
-          <Name>Original LTV</Name>
-          <SourceColumnID>Original LTV</SourceColumnID>
-          <ModelingFlags>
-            <ModelingFlag>REGRESSOR</ModelingFlag>
-          </ModelingFlags>
-        </Column>
         <Column dwd:design-time-name="274a574a-996e-42c9-95b4-2cff0d2a3cf1">
           <ID>Original UPB</ID>
           <Name>Original UPB</Name>
@@ -213,18 +196,18 @@
             <ModelingFlag>REGRESSOR</ModelingFlag>
           </ModelingFlags>
         </Column>
-        <Column dwd:design-time-name="de2e48a0-bd11-4047-8b1f-0a258c9d0385">
-          <ID>Credit</ID>
-          <Name>Credit</Name>
-          <SourceColumnID>Credit</SourceColumnID>
+        <Column dwd:design-time-name="8054ae48-ead4-4540-84da-e329bbd5c6a2">
+          <ID>Loan Origination</ID>
+          <Name>Loan Origination</Name>
+          <SourceColumnID>Loan Origination</SourceColumnID>
           <Columns>
-            <Column dwd:design-time-name="e397425a-7623-4dd0-9945-d6ce61391496">
+            <Column dwd:design-time-name="c4fd795a-5a33-435d-b9a6-65dec172770d">
               <ID>Credit Key</ID>
               <Name>Credit Key</Name>
               <SourceColumnID>Credit Key</SourceColumnID>
               <Usage>Key</Usage>
             </Column>
-            <Column dwd:design-time-name="70367468-a1ed-491b-9d9e-76550ce5d9a6">
+            <Column dwd:design-time-name="2a707b9a-5a25-4d66-8f38-9ddc6f6609fa">
               <ID>Credit Score</ID>
               <Name>Credit Score</Name>
               <SourceColumnID>Credit Score</SourceColumnID>
