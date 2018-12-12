@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="56" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6565" scrolltop="-1623" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="34264" y="21034" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="56" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6565" scrolltop="-1623" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="34925" y="21034" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -637,7 +637,10 @@
         <Attribute dwd:design-time-name="8ccf4af1-f354-4af8-877e-fde84d66b00d">
           <AttributeID>Quarter</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cc6dbf9a-ad5b-40ea-a690-01ef951ba33c">
+        <Attribute dwd:design-time-name="68eb855f-b8cf-4219-83b0-23484e939994">
+          <AttributeID>Month Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="49248918-c43e-435b-8e5e-94b484fef2ac">
           <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
@@ -656,7 +659,10 @@
         <Attribute dwd:design-time-name="41d1e0ea-cc4e-4745-9dc6-266f34a1bcce">
           <AttributeID>Quarter</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="48877d04-2cfe-4104-9dcf-894f3b5e87b2">
+        <Attribute dwd:design-time-name="053d32a5-2031-45ba-bc51-cc8883793fd0">
+          <AttributeID>Month Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b57da2cb-a1d7-42c8-906f-f70078405304">
           <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
@@ -726,7 +732,10 @@
         <Attribute dwd:design-time-name="ddaf89fb-3eb7-4867-8da2-f50bfaaad1c8">
           <AttributeID>Quarter</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="eb47d61e-af1a-4aef-925d-15bf1525166d">
+        <Attribute dwd:design-time-name="484b0977-2952-4678-b5d7-ff6d85293b61">
+          <AttributeID>Month Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8832e1c4-1e04-43b8-8ca0-a890577067be">
           <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
@@ -745,7 +754,10 @@
         <Attribute dwd:design-time-name="de65da9a-e62f-4c9f-913d-6792ccb4dc6a">
           <AttributeID>Quarter</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="f953a5c2-90f6-4575-b623-7ca3ae761c57">
+        <Attribute dwd:design-time-name="6ab1f9b9-870a-48c0-9fad-0c515796b695">
+          <AttributeID>Month Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c1d4d4e9-557f-45d1-9b52-aa58cc531221">
           <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
@@ -764,7 +776,10 @@
         <Attribute dwd:design-time-name="323ddcdc-8437-4300-89b4-317f0232c266">
           <AttributeID>Quarter</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="52c23d8f-5d6e-4a22-a2e9-5f9e26213572">
+        <Attribute dwd:design-time-name="e32857e1-7134-44de-96ec-fb2641964cfe">
+          <AttributeID>Month Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e7c58445-70d4-4a14-a2d2-7b7834264cbc">
           <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
