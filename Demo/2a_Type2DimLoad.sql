@@ -1,3 +1,5 @@
+USE Freddie
+GO
 
 DROP TABLE IF EXISTS dbo.srcEmployee
 CREATE TABLE dbo.srcEmployee
@@ -58,8 +60,11 @@ BEGIN TRANSACTION;
 	FROM dbo.EmployeeDim d
 		INNER JOIN dbo.srcEmployee s
 			ON s.EmpID = d.EmployeeID
-	WHERE d.Title <> s.Title
-		OR d.EmployeeName <> s.EmpName;
+	WHERE d.TerminateDate = '2199-12-31'
+		AND (d.Title <> s.Title
+			OR d.EmployeeName <> s.EmpName)
+		
+
 	
 	-- insert new terminated records into the database
 	INSERT INTO dbo.EmployeeDim
